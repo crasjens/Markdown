@@ -1,0 +1,47 @@
+/* Normal styling til skærm */
+
+.markdown-body {
+	background-color: rgb(5, 21, 37);
+	color: #e9e2e2;
+	font-family: 'Segoe UI', Arial, sans-serif;
+	line-height: 1.6;
+	padding: 1rem;
+}
+
+.markdown-body h1 {
+	color: #d4dbe1;
+	border-bottom: 2px solid #dde3e8;
+}
+
+.markdown-body h2 {
+	color: #dfe6eb;
+	border-bottom: 2px solid #dde3e8;
+}
+
+.markdown-body li {
+	color: #dfe6eb;
+}
+
+/* Print-specifik styling */
+@media print {
+	.markdown-body {
+		background-color: white !important; /* undgå mørk baggrund på papir */
+		color: black !important;
+		font-family: Georgia, serif; /* mere læsevenlig til print */
+	}
+
+	.markdown-body h1,
+	.markdown-body h2 {
+		color: black !important;
+		border: none !important;
+	}
+
+	/* Fjern links' understregning og vis URL efter teksten */
+	.markdown-body a {
+		text-decoration: none;
+	}
+	.markdown-body a::after {
+		content: ' (' attr(href) ')';
+		font-size: 0.8em;
+	}
+}
