@@ -26,6 +26,7 @@ _Italic_
 > Blockquote
 
 ---
+<div style="width:120px; height:40px; background:#ffa500; border:1px solid #ccc;"></div>
 
 This is the orange colour I think we should use `#ffa500`, what do you think?
 
