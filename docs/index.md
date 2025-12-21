@@ -82,7 +82,12 @@ console.log('Hello world');
 
 ---
 
+## Escape af tegn
 
+\*stjerne\*
+\# hashtag
+
+---
 
 
 
