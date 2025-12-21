@@ -6,7 +6,7 @@ mermaid: true
 
 # Markdown Cheat Sheet
 
-Dette dokument viser de mest almindelige og udvidede muligheder i Markdown – nu med Mermaid‑diagrammer.
+Dette dokument viser de mest almindelige og udvidede muligheder i Markdown.
 
 ---
 
@@ -84,8 +84,8 @@ console.log('Hello world');
 
 ## Escape af tegn
 
-\*stjerne\*
-\# hashtag
+\* stjerne \*
+\# hashtag \#
 
 ---
 
