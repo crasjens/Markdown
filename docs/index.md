@@ -1,4 +1,4 @@
-d# Markdown Cheat Sheet
+# Markdown Cheat Sheet
 
 Dette dokument viser de mest almindelige og udvidede muligheder i Markdown.
 
@@ -63,6 +63,7 @@ This is the orange colour I think we should use `#ffa500`, what do you think?
 ![Alt-tekst](https://example.com/billede.png)
 
 ---
+
 <h2>GeoJSON Map</h2>
 <div id="map" style="height: 500px;"></div>
 
@@ -105,8 +106,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Tilføj GeoJSON
 L.geoJSON(geojsonData).addTo(map);
 </script>
-
-
 
 
 ---
