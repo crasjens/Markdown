@@ -6,7 +6,7 @@
 
 # Markdown Cheat Sheet
 
-Dette dokument viser de mest almindelige og udvidede muligheder i Markdown (GitHub‑flavor).
+Dette dokument viser de mest almindelige og udvidede muligheder i Markdown - jeg har tilføjet Githubs eftet mermaid script for at kunne bruge Mermaid under rendering.
 
 ---
 
