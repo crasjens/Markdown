@@ -135,3 +135,30 @@ Indhold her.
 
 ---
 
+## Definition Lists (GFM understøtter ikke officielt, men nogle renderere gør)
+
+Term
+: Definition
+
+---
+
+## Math (hvis renderer understøtter det)
+
+Inline: $E = mc^2$
+
+Block:
+
+$$
+a^2 + b^2 = c^2
+$$
+
+---
+
+## Citater i flere niveauer
+
+> Niveau 1
+>
+> > Niveau 2
+> >
+> > > Niveau 3
+
