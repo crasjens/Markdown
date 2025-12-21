@@ -1,3 +1,4 @@
+<!--
 ---
 layout: default
 title: "Markdown Cheat Sheet"
@@ -179,4 +180,303 @@ $$
 > [!CAUTION]
 > Negative potential consequences of an action.
 >
+-->
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown Cheat Sheet</title>
+
+  <!-- Mermaid -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+  <!-- GitHub Markdown styling -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-dark.min.css" />
+
+  <style>
+    body {
+      background: #0d1117;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+    .markdown-body {
+      max-width: 900px;
+    }
+    pre code {
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+<div class="markdown-body">
+
+<h1>Markdown Cheat Sheet</h1>
+
+<p>Dette dokument viser de mest almindelige og udvidede muligheder i Markdown – nu med Mermaid‑diagrammer, der virker på GitHub Pages.</p>
+
+<hr />
+
+<h2>Overskrifter</h2>
+
+<h1>H1</h1>
+<h2>H2</h2>
+<h3>H3</h3>
+<h4>H4</h4>
+<h5>H5</h5>
+<h6>H6</h6>
+
+<hr />
+
+<h2>Typografi</h2>
+
+<p><strong>Bold</strong><br>
+<em>Italic</em><br>
+<strong><em>Bold + italic</em></strong><br>
+<del>Strikethrough</del><br>
+<code>Inline code</code></p>
+
+<blockquote>Blockquote</blockquote>
+
+<hr />
+
+<h2>Lister</h2>
+
+<h3>Punktlister</h3>
+<ul>
+  <li>Punkt
+    <ul>
+      <li>Underpunkt
+        <ul>
+          <li>Under-underpunkt</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Nummererede lister</h3>
+<ol>
+  <li>Første</li>
+  <li>Anden</li>
+  <li>Tredje</li>
+</ol>
+
+<h3>Opgavelister</h3>
+<ul>
+  <li>[ ] Uafsluttet</li>
+  <li>[x] Afsluttet</li>
+</ul>
+
+<hr />
+
+<h2>Links</h2>
+
+<p><a href="https://example.com">Linktekst</a><br>
+<a href="https://example.com" title="Titeltekst">Link med titel</a></p>
+
+<hr />
+
+<h2>Billeder</h2>
+
+<p><img src="https://example.com/billede.png" alt="Alt-tekst" /></p>
+
+<hr />
+
+<h2>Kodeblokke</h2>
+
+<pre><code class="language-javascript">
+console.log('Hello world');
+</code></pre>
+
+<hr />
+
+<h2>Tabeller</h2>
+
+<table>
+  <tr><th>Kolonne 1</th><th>Kolonne 2</th><th>Kolonne 3</th></tr>
+  <tr><td>Celle A</td><td>Celle B</td><td>Celle C</td></tr>
+  <tr><td>Celle D</td><td>Celle E</td><td>Celle F</td></tr>
+</table>
+
+<hr />
+
+<h2>Escape af tegn</h2>
+
+<p>\*stjerne\*<br>
+\# hashtag</p>
+
+<hr />
+
+<h2>Autolinks</h2>
+
+<p>https://github.com<br>
+&lt;https://github.com&gt;</p>
+
+<hr />
+
+<h2>Footnotes</h2>
+
+<p>Tekst med fodnote.<sup>[1]</sup></p>
+<p><small>[1] Dette er fodnoten.</small></p>
+
+<hr />
+
+<h2>Sammenfoldelige sektioner</h2>
+
+<details>
+<summary>Klik for at åbne</summary>
+<p>Indhold her.</p>
+</details>
+
+<hr />
+
+<h2>Emojis</h2>
+
+<p>:smile:<br>
+:rocket:<br>
+:thumbsup:</p>
+
+<hr />
+
+<h2>Mentions</h2>
+
+<p>@brugernavn<br>
+#123 issue reference</p>
+
+<hr />
+
+<h2>Kommentarer</h2>
+
+<p>(Kommentarer vises ikke i HTML)</p>
+
+<hr />
+
+<h2>Math</h2>
+
+<p>Inline: <code>E = mc^2</code></p>
+
+<p>Block:</p>
+
+<pre><code>
+a^2 + b^2 = c^2
+</code></pre>
+
+<hr />
+
+<h2>Citater i flere niveauer</h2>
+
+<blockquote>
+  Niveau 1
+  <blockquote>
+    Niveau 2
+    <blockquote>
+      Niveau 3
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<hr />
+
+<h2>Kombineret eksempel</h2>
+
+<h1>Titel</h1>
+
+<p>Her er <strong>bold</strong>, <em>italic</em>, og <code>inline code</code>.</p>
+
+<ul>
+  <li>Punkt 1</li>
+  <li>Punkt 2
+    <ul>
+      <li>Underpunkt</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>Et citat</blockquote>
+
+<pre><code class="language-python">
+print("kodeblok")
+</code></pre>
+
+<table>
+  <tr><th>A</th><th>B</th></tr>
+  <tr><td>1</td><td>2</td></tr>
+</table>
+
+<hr />
+
+<h2>Diagrammer (Mermaid)</h2>
+
+<h3>Eksempel 1</h3>
+<div class="mermaid">
+graph LR;
+    A-->B;
+    B-->C;
+</div>
+
+<hr />
+
+<h3>Eksempel 2</h3>
+<div class="mermaid">
+graph LR;
+A[Input] -->|validerer| B{OK?};
+B -->|Ja| C[Gemmer data];
+B -->|Nej| D[Fejl];
+</div>
+
+<hr />
+
+<h3>Stort diagram</h3>
+<div class="mermaid">
+graph LR;
+    A[Markdown Elementer] --> B[Typografi];
+    A --> C[Links & Billeder];
+    A --> D[Lister];
+    A --> E[Kode & Kodeblokke];
+    A --> F[Tabeller];
+    A --> G[Diagrammer];
+</div>
+
+<hr />
+
+<h3>Renderer-flow</h3>
+<div class="mermaid">
+graph LR;
+    Start((Start)) --> A[Write Markdown];
+    A --> B{Renderer?};
+    B -->|GitHub| C[GitHub Flavored Markdown];
+    B -->|VS Code| D[Markdown Preview];
+    B -->|Browser| E[Static HTML];
+</div>
+
+<hr />
+
+<h3>Komplet oversigt</h3>
+<div class="mermaid">
+graph LR;
+    A[Markdown Cheat Sheet] --> B[Typografi];
+    A --> C[Lister];
+    A --> D[Links & Billeder];
+    A --> E[Kode & Kodeblokke];
+    A --> F[Tabeller];
+    A --> G[Diagrammer];
+    A --> H[Avancerede Elementer];
+</div>
+
+<hr />
+
+</div>
+</body>
+</html>
+
+
+
 
