@@ -3,3 +3,6 @@
 Please look at the following Issues and Pull Requests: THIS IS JUST FOR TESTING
 - https://github.com/eddiejaoude/eddiejaoude/pull/133
 - https://github.com/eddiejaoude/eddiejaoude/pull/134
+
+```json { "type": "FeatureCollection", "features": [ { "type": "Feature", "id": 1, "properties": { "ID": 0 }, "geometry": { "type": "Polygon", "coordinates": [ [ [-90,35], [-90,30], [-85,30], [-85,35], [-90,35] ] ] } } ] }
+``` 
