@@ -113,5 +113,25 @@ Indhold her.
 </details>
 
 ---
+## Emojis (GitHub)
 
+:smile:
+:rocket:
+:thumbsup:
+
+---
+
+## Mentions (GitHub)
+
+@brugernavn
+#123 issue reference
+
+---
+
+## Task-lister i PR/Issues (GitHub)
+
+- [ ] Opgave 1
+- [x] Opgave 2
+
+---
 
