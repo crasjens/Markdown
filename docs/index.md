@@ -27,6 +27,8 @@ _Italic_
 
 ---
 
+This is the orange colour I think we should use `#ffa500`, what do you think?
+
 ## Lister
 
 ### Punktlister
