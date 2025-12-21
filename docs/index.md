@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="assets/style.css">
+
+
 # Markdown Cheat Sheet
 
 Dette dokument viser de mest almindelige og udvidede muligheder i Markdown.
