@@ -1,21 +1,20 @@
-## Referencer
+# Markdown Cheat Sheet
 
-Please look at the following Issues and Pull Requests: THIS IS JUST FOR TESTING
-- https://github.com/eddiejaoude/eddiejaoude/pull/133
-- https://github.com/eddiejaoude/eddiejaoude/pull/134
+Dette er en hurtig introduktion.  
+For den fulde, interaktive dokumentation, se GitHub Pages:
 
+👉 https://crasjens.github.io/Markdown/
 
-> [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
+[!NOTE]
+Dette README viser kun GitHub‑venlige funktioner.
 
-> [!TIP]
-> Optional information to help a user be more successful.
+## Eksempler
 
-> [!IMPORTANT]  
-> Crucial information necessary for users to succeed.
+- **Bold**
+- _Italic_
+- `Inline code`
 
-> [!WARNING]  
-> Critical content demanding immediate user attention due to potential risks.
+## Links
 
-> [!CAUTION]
->
+[Se den fulde dokumentation](https://crasjens.github.io/Markdown/)
+
