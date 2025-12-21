@@ -1,7 +1,7 @@
 # Markdown Cheat Sheet
 
 Dette er en hurtig introduktion.  (under opbyning)
-For den fulde, interaktive dokumentation, se GitHub Pages:
+For den fulde, interaktive dokumentation, se GitHub Pages: (under opbyning)
 
 👉 https://crasjens.github.io/Markdown/
 
