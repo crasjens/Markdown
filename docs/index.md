@@ -1,15 +1,6 @@
-<div>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <script>
-    mermaid.initialize({ startOnLoad: true });
-  </script>
-</div>
-
-<div class="markdown-body">
-
 # Markdown Cheat Sheet
 
-Dette dokument viser de mest almindelige og udvidede muligheder i Markdown - jeg har tilføjet Githubs eftet mermaid script for at kunne bruge Mermaid under rendering.
+Dette dokument viser de mest almindelige og udvidede muligheder i Markdown
 
 ---
 
