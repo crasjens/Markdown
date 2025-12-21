@@ -64,48 +64,7 @@ This is the orange colour I think we should use `#ffa500`, what do you think?
 
 ---
 
-<h2>GeoJSON Map</h2>
-<div id="map" style="height: 500px;"></div>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script>
-// Dit GeoJSON
-const geojsonData = {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "id": 1,
-      "properties": { "ID": 0 },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [-90,35],
-            [-90,30],
-            [-85,30],
-            [-85,35],
-            [-90,35]
-          ]
-        ]
-      }
-    }
-  ]
-};
-
-// Opret kort
-const map = L.map('map').setView([32.5, -87.5], 6);
-
-// Baggrundskort
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19
-}).addTo(map);
-
-// Tilføj GeoJSON
-L.geoJSON(geojsonData).addTo(map);
-</script>
+<iframe src="map.html" width="100%" height="600" style="border:none;"></iframe>
 
 
 ---
