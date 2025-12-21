@@ -175,6 +175,7 @@ graph LR
 ```
 
 <iframe src="https://www.viewstl.com/?embedded&url=https://raw.githubusercontent.com/crasjens/Markdown/main/docs/model.stl" width="600" height="400" style="border: none;"> </iframe>
+---
 
 <div class="callout callout-note">
   <strong>NOTE:</strong> Dette er en note.
