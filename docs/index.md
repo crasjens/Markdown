@@ -5,6 +5,7 @@
   </script>
 </div>
 
+<div class="markdown-body">
 
 # Markdown Cheat Sheet
 
@@ -343,3 +344,5 @@ graph LR;
 
 > [!CAUTION]
 > Negative potential consequences of an action.
+>
+</div>
