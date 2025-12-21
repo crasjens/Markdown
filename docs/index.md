@@ -209,11 +209,11 @@ print("kodeblok")
 
 ## Diagrammer (GitHub – Mermaid)
 
-```mermaid
+
 graph LR;
     A-->B;
     B-->C;
-```
+
 
 ---
 
