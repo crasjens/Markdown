@@ -1,4 +1,4 @@
-# Markdown Cheat Sheet
+d# Markdown Cheat Sheet
 
 Dette dokument viser de mest almindelige og udvidede muligheder i Markdown.
 
@@ -61,6 +61,11 @@ This is the orange colour I think we should use `#ffa500`, what do you think?
 ## Billeder
 
 ![Alt-tekst](https://example.com/billede.png)
+
+---
+Se kortet her: [GeoJSON Map](map.html)
+
+
 
 ---
 
