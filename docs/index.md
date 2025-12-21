@@ -1,10 +1,3 @@
-
----
-layout: default
-title: "Markdown Cheat Sheet"
-mermaid: true
----
-
 # Markdown Cheat Sheet
 
 Dette dokument viser de mest almindelige og udvidede muligheder i Markdown.
