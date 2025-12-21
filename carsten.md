@@ -18,3 +18,5 @@
 - JavaScript, CSS, HTML
 - Grafisk design (InDesign, Illustrator, Photoshop)
 - Kommunikation og undervisning
+
+lorem

@@ -1,0 +1,12 @@
+openapi: 3.0.0
+info:
+  title: Eksempel API
+  version: 1.0.0
+
+paths:
+  /users:
+    get:
+      summary: Hent alle brugere
+      responses:
+        '200':
+          description: Liste af brugere
