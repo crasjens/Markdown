@@ -89,5 +89,20 @@ console.log('Hello world');
 
 ---
 
+## Autolinks (GitHub)
+
+https://github.com
+<https://github.com>
+
+---
+
+## Footnotes (GitHub)
+
+Tekst med fodnote.[^1]
+
+[^1]: Dette er fodnoten.
+
+---
+
 
 
