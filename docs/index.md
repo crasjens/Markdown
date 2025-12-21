@@ -73,6 +73,13 @@ _Italic_
 console.log('Hello world');
 ```
 
+## Tabeller
+
+| Kolonne 1 | Kolonne 2 | Kolonne 3 |
+| --------- | --------- | --------- |
+| Celle A   | Celle B   | Celle C   |
+| Celle D   | Celle E   | Celle F   |
+
 ---
 
 
