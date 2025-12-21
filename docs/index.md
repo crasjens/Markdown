@@ -84,8 +84,8 @@ console.log('Hello world');
 
 ## Escape af tegn
 
-\* stjerne \*
-\# hashtag \#
+\*stjerne\*
+\# hashtag
 
 ---
 
@@ -103,6 +103,15 @@ Tekst med fodnote.[^1]
 [^1]: Dette er fodnoten.
 
 ---
+## Sammenfoldelige sektioner (GitHub)
 
+<details>
+<summary>Klik for at åbne</summary>
+
+Indhold her.
+
+</details>
+
+---
 
 
