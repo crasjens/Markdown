@@ -1,6 +1,6 @@
 # Markdown Cheat Sheet
 
-Dette er en hurtig introduktion.  
+Dette er en hurtig introduktion.  (under opbyning)
 For den fulde, interaktive dokumentation, se GitHub Pages:
 
 👉 https://crasjens.github.io/Markdown/
