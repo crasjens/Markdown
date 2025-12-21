@@ -1,8 +1,27 @@
-<h2>GeoJSON Map</h2>
-<div id="map" style="height: 500px;"></div>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>GeoJSON Map</title>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <style>
+    #map {
+      height: 500px;
+      width: 100%;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h2>GeoJSON Map</h2>
+<div id="map"></div>
 
 <script>
 // Dit GeoJSON
@@ -38,6 +57,15 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Tilføj GeoJSON
-L.geoJSON(geojsonData).addTo(map);
+L.geoJSON(geojsonData, {
+  style: {
+    color: "#ff6600",
+    weight: 3,
+    fillColor: "#ffa500",
+    fillOpacity: 0.4
+  }
+}).addTo(map);
 </script>
 
+</body>
+</html>
