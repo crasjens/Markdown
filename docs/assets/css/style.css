@@ -1,1 +1,22 @@
+.callout {
+  padding: 12px;
+  border-left: 4px solid;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+.callout-note {
+  border-color: #0af;
+  background: #f0f8ff;
+}
+
+.callout-tip {
+  border-color: #4caf50;
+  background: #f0fff4;
+}
+
+.callout-warning {
+  border-color: #f44336;
+  background: #fff5f5;
+}
 
