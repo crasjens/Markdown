@@ -176,6 +176,17 @@ graph LR
 
 <iframe src="https://www.viewstl.com/?embedded&url=https://raw.githubusercontent.com/crasjens/Markdown/main/docs/model.stl" width="600" height="400" style="border: none;"> </iframe>
 
+<div class="callout callout-note">
+  <strong>NOTE:</strong> Dette er en note.
+</div>
+
+<div class="callout callout-tip">
+  <strong>TIP:</strong> Dette er et tip.
+</div>
+
+<div class="callout callout-warning">
+  <strong>WARNING:</strong> Dette er en advarsel.
+</div>
 
 
 
