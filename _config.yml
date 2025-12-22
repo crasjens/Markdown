@@ -1,4 +1,0 @@
-title: Mit Markdown Projekt
-remote_theme: pages-themes/cayman # Eller et andet tema
-plugins:
-  - jekyll-remote-theme
