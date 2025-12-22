@@ -76,7 +76,12 @@ pre {
     margin: 0 auto;
     padding: 0 1rem;
 }
-
+.nav-logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
 .nav-links {
     display: flex;      /* Dette lægger dem på en række */
     list-style: none;   /* Fjerner prikkerne */
