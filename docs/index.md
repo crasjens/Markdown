@@ -181,12 +181,16 @@ graph LR
     A[Start] --> B[Slut]
 </div>
 
+---
+
 <div class="mermaid">
 graph LR;
 A[Input] -->|validerer| B{OK?};
  B -->|Ja| C[Gemmer data];
   B -->|Nej|
 </div>
+
+---
 
 <div class="callout callout-note">
   <strong>NOTE:</strong> Dette er en note.
