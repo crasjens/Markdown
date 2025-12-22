@@ -185,9 +185,7 @@ graph LR
 
 <div class="mermaid">
 graph LR
-A[Input] -->|validerer| B{OK?}
- B -->|Ja| C[Gemmer data]
- B -->|Nej|
+    A[Start] --> B[Slut]
 </div>
 
 ---
