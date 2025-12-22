@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/scripts.js" type="module"></script>
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 # Markdown Cheat Sheet
 
@@ -11,10 +13,15 @@ Dette dokument viser de mest almindelige og udvidede muligheder i Markdown.
 ## Overskrifter
 
 # H1
+
 ## H2
+
 ### H3
+
 #### H4
+
 ##### H5
+
 ###### H6
 
 ---
@@ -30,6 +37,7 @@ _Italic_
 > Blockquote
 
 ---
+
 <div style="width:120px; height:40px; background:#ffa500; border:1px solid #ccc;"></div>
 
 This is the orange colour I think we should use `#ffa500`, what do you think?
@@ -58,7 +66,7 @@ This is the orange colour I think we should use `#ffa500`, what do you think?
 ## Links
 
 [Linktekst](https://example.com)  
-[Link med titel](https://example.com "Titeltekst")
+[Link med titel](https://example.com 'Titeltekst')
 
 ---
 
@@ -71,7 +79,6 @@ This is the orange colour I think we should use `#ffa500`, what do you think?
 <iframe src="map.html" width="100%" height="600" style="border:none;"></iframe>
 
 ---
-
 
 ## Kodeblokke
 
@@ -109,6 +116,7 @@ Tekst med fodnote.[^1]
 [^1]: Dette er fodnoten.
 
 ---
+
 ## Sammenfoldelige sektioner (GitHub)
 
 <details>
@@ -119,6 +127,7 @@ Indhold her.
 </details>
 
 ---
+
 ## Emojis (GitHub)
 
 :smile:
@@ -170,7 +179,6 @@ $$
 
 ---
 
-
 <div class="mermaid">
 graph LR
     A[Start] --> B[Slut]
@@ -187,6 +195,3 @@ graph LR
 <div class="callout callout-warning">
   <strong>WARNING:</strong> Dette er en advarsel.
 </div>
-
-
-
