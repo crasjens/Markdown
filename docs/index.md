@@ -174,7 +174,8 @@ graph LR
     Start --> Slut
 ```
 
-<iframe src="https://www.viewstl.com/?embedded&url=https://raw.githubusercontent.com/crasjens/Markdown/main/docs/model.stl" width="600" height="400" style="border: none;"> </iframe>
+<iframe src="map.html" width="100%" height="600" style="border:none;"></iframe>
+
 ---
 
 <div class="callout callout-note">
