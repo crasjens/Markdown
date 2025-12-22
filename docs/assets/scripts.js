@@ -1,25 +1,26 @@
-// Denne linje henter Mermaid direkte fra nettet (CDN)
+// 1. Mermaid setup (som før)
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+mermaid.initialize({ startOnLoad: true });
 
-// Denne linje fortæller Mermaid, at den skal lede efter diagrammer på siden
-mermaid.initialize({
-	startOnLoad: true,
-	theme: 'default', // Du kan også bruge 'dark', 'forest', etc.
-});
-
-// 1. Konfigurer MathJax (valgfrit, men godt for kontrollen)
+// 2. MathJax Konfiguration (VIGTIGT: Dette skal ske FØR scriptet hentes)
 window.MathJax = {
 	tex: {
 		inlineMath: [
 			['$', '$'],
 			['\\(', '\\)'],
+		], // Her aktiverer vi de enkelte $
+		displayMath: [
+			['$$', '$$'],
+			['\\[', '\\]'],
 		],
+	},
+	options: {
+		skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
 	},
 };
 
-// 2. Skab et nyt script-element "i luften"
+// 3. Hent MathJax scriptet "dynamisk"
 const script = document.createElement('script');
 script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
 script.async = true;
-
-// 3. Sæt det ind på siden
+document.head.appendChild(script);
