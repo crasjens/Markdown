@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/scripts.css"></script>
 
 
 # Markdown Cheat Sheet
