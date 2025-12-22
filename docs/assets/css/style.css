@@ -86,3 +86,52 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* --- Navigation Styling --- */
+.main-nav {
+    background-color: #24292f; /* GitHub mørk grå */
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-logo {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #3fb950; /* GitHub grøn */
+    text-decoration: none;
+}
+
+.main-footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #6e7781;
+    font-size: 0.9rem;
+}
