@@ -1,205 +1,126 @@
-<link rel="stylesheet" href="assets/style.css">
-<script src="assets/scripts.js" type="module"></script>
+# 🏆 Det Ultimative GFM Master Cheat Sheet
 
-# Markdown Cheat Sheet
-
-Dette dokument viser de mest almindelige og udvidede muligheder i Markdown.
-
----
-
-## Overskrifter
-
-# H1
-
-## H2
-
-### H3
-
-#### H4
-
-##### H5
-
-###### H6
+## 1. Overskrifter & Struktur
+# H1 Titel
+## H2 Sektion
+### H3 Undersektion
+#### H4 Detalje
+##### H5 Lille
+###### H6 Mindste
 
 ---
 
-## Typografi
-
-**Bold**  
-_Italic_  
-**_Bold + italic_**  
-~~Strikethrough~~  
-`Inline code`
-
-> Blockquote
+## 2. Tekstformatering
+* **Fed:** **Tekst** eller __Tekst__
+* *Kursiv:* *Tekst* eller _Tekst_
+* ***Fed & Kursiv:*** ***Tekst***
+* ~~Overstreget:~~ ~~Tekst~~
+* `Inline kode:` `Tekst`
 
 ---
 
-<div style="width:120px; height:40px; background:#ffa500; border:1px solid #ccc;"></div>
+## 3. Lister & Opgaver
 
-This is the orange colour I think we should use `#ffa500`, what do you think?
-
-## Lister
-
-### Punktlister
-
-- Punkt
-  - Underpunkt
-    - Under-underpunkt
-
-### Nummererede lister
-
+### Punkttegn & Nummerering
+* Punkt 1
+  * Underpunkt
 1. Første
 2. Anden
-3. Tredje
+   1. Under-nummerering
 
-### Opgavelister
-
-- [ ] Uafsluttet
-- [x] Afsluttet
-
----
-
-## Links
-
-[Linktekst](https://example.com)  
-[Link med titel](https://example.com 'Titeltekst')
+### Task Lists (Interaktive)
+- [x] Denne opgave er fuldført
+- [ ] Denne opgave mangler stadig
 
 ---
 
-## Billeder
+## 4. Alerts & Callouts (Officiel GFM)
+> [!NOTE]
+> Bruges til vigtig baggrundsviden.
 
-![Alt-tekst](https://example.com/billede.png)
+> [!TIP]
+> Smarte genveje eller gode råd.
+
+> [!IMPORTANT]
+> Ting brugeren absolut skal vide.
+
+> [!WARNING]
+> Advarsler om potentielle fejl.
+
+> [!CAUTION]
+> Risiko for kritiske fejl eller tab af data.
 
 ---
 
-<iframe src="map.html" width="100%" height="600" style="border:none;"></iframe>
+## 5. Tabeller
+| Funktion | Justering | Eksempel |
+| :--- | :---: | ---: |
+| Venstrestillet | Centreret | Højrestillet |
+| Linje 2 | `center` | 1.000,00 |
+| Multilinje | Brug <br> | Linje A <br> Linje B |
 
 ---
 
-## Kodeblokke
+## 6. Kodeblokke (Syntax Highlighting)
+Herunder ser du, hvordan man laver blokkene:
 
-```javascript
-console.log('Hello world');
+```python
+def hilsen():
+    print("Hej fra Python!")
 ```
 
-## Tabeller
-
-| Kolonne 1 | Kolonne 2 | Kolonne 3 |
-| --------- | --------- | --------- |
-| Celle A   | Celle B   | Celle C   |
-| Celle D   | Celle E   | Celle F   |
+```html
+<h1>Hej fra HTML!</h1>
+```
 
 ---
 
-## Escape af tegn
-
-\*stjerne\*
-\# hashtag
-
----
-
-## Autolinks (GitHub)
-
-https://github.com
-<https://github.com>
+## 7. Links, Billeder & Video
+* **Link:** [GitHub](https://github.com)
+* **Autolink:** https://github.com
+* **Billede:** ![Alt-tekst](https://github.com/fluidicon.png)
+* **Video:** ![Beskrivelse](sti/til/video.mp4)
 
 ---
 
-## Footnotes (GitHub)
+## 8. Citater & Fodnoter
+> Dette er et citat.
+>> Dette er et indlejret citat.
 
-Tekst med fodnote.[^1]
+Her er en tekst med en fodnote.[^1]
 
-[^1]: Dette er fodnoten.
+[^1]: Dette er selve fodnoten, som placeres i bunden af dokumentet.
 
 ---
 
-## Sammenfoldelige sektioner (GitHub)
+## 9. Matematik (LaTeX)
+Inline: $a^2 + b^2 = c^2$
 
+Blok:
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+---
+
+## 10. Organisering & Hemmeligheder
+
+### Sammenfoldelig sektion
 <details>
-<summary>Klik for at åbne</summary>
+<summary>Klik her for at se mere</summary>
 
-Indhold her.
-
+Dette indhold er skjult, indtil man trykker på pilen.
 </details>
 
----
-
-## Emojis (Native)
-
-😄
-🚀
-👍
+### Kommentarer (Usynlige i renderet version)
+### Escape tegn (Viser tegnene i stedet for formatering)
+\*Dette er ikke kursiv\*
+\# Dette er ikke en overskrift
+\[Dette er ikke et link\]
 
 ---
 
-## Mentions (GitHub)
-
-@brugernavn
-#123 issue reference
-
----
-
-## Task-lister i PR/Issues (GitHub)
-
-- [ ] Opgave 1
-- [x] Opgave 2
-
----
-
-## Definition Lists (GFM understøtter ikke officielt, men nogle renderere gør)
-
-Term
-: Definition
-
----
-
-## Math (hvis renderer understøtter det)
-
-Inline: $E = mc^2$
-
-Block:
-
-$$
-a^2 + b^2 = c^2
-$$
-
----
-
-## Citater i flere niveauer
-
-> Niveau 1
->
-> > Niveau 2
-> >
-> > > Niveau 3
-
----
-
-<div class="mermaid">
-graph LR
-    A[Start] --> B[Slut]
-</div>
-
----
-
-<div class="mermaid">
-graph LR;
-    A[Input] -->|validerer| B{OK?}
-    B -->|Ja| C[Gemmer data]
-    B -->|Nej| D[Fejl]
-</div>
-
----
-
-<div class="callout callout-note">
-  <strong>NOTE:</strong> Dette er en note.
-</div>
-
-<div class="callout callout-tip">
-  <strong>TIP:</strong> Dette er et tip.
-</div>
-
-<div class="callout callout-warning">
-  <strong>WARNING:</strong> Dette er en advarsel.
-</div>
+## 11. GitHub Specifikt
+* **Mentions:** @brugernavn
+* **Issues:** #123
+* **Emojis:** :rocket: :art: :tada: :white_check_mark:
