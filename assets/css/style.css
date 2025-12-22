@@ -69,7 +69,24 @@ pre {
 }
 
 .nav-container {
+    display: flex;
+    justify-content: space-between; /* Logo til venstre, links til højre */
+    align-items: center;
     max-width: 50rem;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
+}
+
+.nav-links {
+    display: flex;      /* Dette lægger dem på en række */
+    list-style: none;   /* Fjerner prikkerne */
+    gap: 1.5rem;        /* Giver luft mellem hvert link */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none; /* Fjerner understregningen */
+    color: #ffffff;        /* Gør teksten hvid */
+    font-weight: 500;
 }
