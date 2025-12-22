@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="assets/style.css">
-<script src="assets/scripts.css"></script>
+<script src="assets/scripts.js" type="module"></script>
 
 
 # Markdown Cheat Sheet
