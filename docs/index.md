@@ -1,86 +1,205 @@
----
-layout: default
----
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/scripts.js" type="module"></script>
 
-# Her starter dit indhold...
+# Markdown Cheat Sheet
 
-
-# 🏆 Universal Markdown Cheat Sheet
-> Dette dokument er optimeret til at se ens ud på GitHub og GitHub Pages.
+Dette dokument viser de mest almindelige og udvidede muligheder i Markdown.
 
 ---
 
-## 1. Tekst & Struktur
-Man kan bruge **fed skrift**, *kursiv* eller ~~overstregning~~. 
+## Overskrifter
 
-For at lave et linjeskift uden at starte et nyt afsnit,  
-skal du lave to mellemrum i slutningen af linjen.
+# H1
 
----
+## H2
 
-## 2. Lister & Opgaver
-* Standard punktliste
-  * Indrykket punkt
-1. Nummereret liste
-2. Punkt nummer to
+### H3
 
-- [x] En opgave der er klaret
-- [ ] En opgave der mangler
+#### H4
+
+##### H5
+
+###### H6
 
 ---
 
-## 3. Citater & "Falske" Alerts
-Da GitHub Pages ikke altid forstår `[!NOTE]`, bruger vi her den klassiske metode, som virker overalt:
+## Typografi
 
-> **NOTE:** Dette er en vigtig besked i et citat-felt.
-> Det virker på alle platforme.
+**Bold**  
+_Italic_  
+**_Bold + italic_**  
+~~Strikethrough~~  
+`Inline code`
 
----
-
-## 4. Tabeller
-Husk altid en tom linje over din tabel for at sikre, at den renderes korrekt.
-
-| Funktion | Status | Bemærkning |
-| :--- | :---: | :--- |
-| GFM Tabeller | ✅ Virker | Husk `|` og `-` |
-| Formatering | `Kode` | Kan bruges i celler |
+> Blockquote
 
 ---
 
-## 5. Kodeblokke
-Syntax highlighting virker på begge platforme.
+<div style="width:120px; height:40px; background:#ffa500; border:1px solid #ccc;"></div>
+
+This is the orange colour I think we should use `#ffa500`, what do you think?
+
+## Lister
+
+### Punktlister
+
+- Punkt
+  - Underpunkt
+    - Under-underpunkt
+
+### Nummererede lister
+
+1. Første
+2. Anden
+3. Tredje
+
+### Opgavelister
+
+- [ ] Uafsluttet
+- [x] Afsluttet
+
+---
+
+## Links
+
+[Linktekst](https://example.com)  
+[Link med titel](https://example.com 'Titeltekst')
+
+---
+
+## Billeder
+
+![Alt-tekst](https://example.com/billede.png)
+
+---
+
+<iframe src="map.html" width="100%" height="600" style="border:none;"></iframe>
+
+---
+
+## Kodeblokke
 
 ```javascript
-function helloWorld() {
-  console.log("Dette virker overalt!");
-}
+console.log('Hello world');
 ```
 
----
+## Tabeller
 
-## 6. Links & Billeder
-* Link: [Besøg Google](https://google.com)
-* Billede: ![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
-
----
-
-## 7. Emojis
-Brug de rigtige symboler i stedet for koder som `:rocket:`, hvis du vil være 100% sikker uden plugins:
-🚀 💡 ✅ ❌ ⚠️
+| Kolonne 1 | Kolonne 2 | Kolonne 3 |
+| --------- | --------- | --------- |
+| Celle A   | Celle B   | Celle C   |
+| Celle D   | Celle E   | Celle F   |
 
 ---
 
-## 8. Sammenfoldeligt indhold (HTML)
-Dette er den sikreste måde at skjule tekst på, da begge motorer tillader disse tags:
+## Escape af tegn
+
+\*stjerne\*
+\# hashtag
+
+---
+
+## Autolinks (GitHub)
+
+https://github.com
+<https://github.com>
+
+---
+
+## Footnotes (GitHub)
+
+Tekst med fodnote.[^1]
+
+[^1]: Dette er fodnoten.
+
+---
+
+## Sammenfoldelige sektioner (GitHub)
 
 <details>
-<summary>Klik her for at se detaljer</summary>
+<summary>Klik for at åbne</summary>
 
-Dette indhold gemmes væk, indtil brugeren klikker.
+Indhold her.
+
 </details>
 
 ---
 
-## 9. Matematiske formler (Billed-metoden)
-Hvis du vil undgå JavaScript-fejl på din hjemmeside, er det sikrest at indsætte formler som billeder, eller bruge standard tekst:
-**E = mc²**
+## Emojis (Native)
+
+😄
+🚀
+👍
+
+---
+
+## Mentions (GitHub)
+
+@brugernavn
+#123 issue reference
+
+---
+
+## Task-lister i PR/Issues (GitHub)
+
+- [ ] Opgave 1
+- [x] Opgave 2
+
+---
+
+## Definition Lists (GFM understøtter ikke officielt, men nogle renderere gør)
+
+Term
+: Definition
+
+---
+
+## Math (hvis renderer understøtter det)
+
+Inline: $E = mc^2$
+
+Block:
+
+$$
+a^2 + b^2 = c^2
+$$
+
+---
+
+## Citater i flere niveauer
+
+> Niveau 1
+>
+> > Niveau 2
+> >
+> > > Niveau 3
+
+---
+
+<div class="mermaid">
+graph LR
+    A[Start] --> B[Slut]
+</div>
+
+---
+
+<div class="mermaid">
+graph LR;
+    A[Input] -->|validerer| B{OK?}
+    B -->|Ja| C[Gemmer data]
+    B -->|Nej| D[Fejl]
+</div>
+
+---
+
+<div class="callout callout-note">
+  <strong>NOTE:</strong> Dette er en note.
+</div>
+
+<div class="callout callout-tip">
+  <strong>TIP:</strong> Dette er et tip.
+</div>
+
+<div class="callout callout-warning">
+  <strong>WARNING:</strong> Dette er en advarsel.
+</div>
