@@ -1,9 +1,6 @@
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/scripts.js" type="module"></script>
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 # Markdown Cheat Sheet
 
 Dette dokument viser de mest almindelige og udvidede muligheder i Markdown.
