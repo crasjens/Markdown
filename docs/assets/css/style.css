@@ -1,3 +1,16 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #222;
+  margin: 0;
+  padding: 0 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .callout {
   padding: 12px;
   border-left: 4px solid;
