@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Mit Master Cheat Sheet
+title: Mit Master Cheat Sheet site (under opbygning)
 ---
 
-# 🏆 Det Ultimative GFM Master Cheat Sheet
+# 🏆 GFM Master Cheat Sheet
 
 Dette indhold bliver nu automatisk lagt ind i "default" layoutet.
 
@@ -13,4 +13,4 @@ Dette indhold bliver nu automatisk lagt ind i "default" layoutet.
 | CSS | ✅ Tilkoblet |
 
 ## En sektion
-Her kan du fortsætte med din rene GFM kode...
+Rene GFM kode ... kommer nok snart her
