@@ -170,10 +170,11 @@ $$
 
 ---
 
-```mermaid
+
+<div class="mermaid">
 graph LR
-    Start --> Slut
-```
+    A[Start] --> B[Slut]
+</div>
 
 <div class="callout callout-note">
   <strong>NOTE:</strong> Dette er en note.
