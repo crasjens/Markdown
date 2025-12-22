@@ -1,1 +1,12 @@
-markdown: GFM
+# Indstillinger for at få GitHub Pages til at ligne GitHub.com
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Aktiverer understøttelse af emojis (hvis dit tema understøtter det)
+plugins:
+  - jekyll-mentions
+  - jekyll-emoji
+  - jekyll-sitemap
