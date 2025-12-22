@@ -1,5 +1,0 @@
-# Fortæl Jekyll at den skal bruge dit eget layout
-layout: default
-# Sørg for at den ikke leder efter et eksternt tema, der overskriver dit eget
-theme: [] 
-remote_theme: []
