@@ -1,3 +1,10 @@
+---
+layout: default
+---
+
+# Her starter dit indhold...
+
+
 # 🏆 Universal Markdown Cheat Sheet
 > Dette dokument er optimeret til at se ens ud på GitHub og GitHub Pages.
 
