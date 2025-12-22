@@ -125,11 +125,11 @@ Indhold her.
 
 ---
 
-## Emojis (GitHub)
+## Emojis (Native)
 
-:smile:
-:rocket:
-:thumbsup:
+😄
+🚀
+👍
 
 ---
 
