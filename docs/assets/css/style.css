@@ -46,6 +46,14 @@ blockquote {
   border-radius: 0.375rem;
 }
 
+.three-d-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0; /* Giver luft over og under modellen */
+  width: 100%;
+}
+
 blockquote strong:first-child {
   display: block;
   margin-bottom: 0.5rem;
@@ -81,6 +89,7 @@ table th, table td {
   padding: 0.5rem 0.8rem;
   border: 0.0625rem solid #dfe2e5;
 }
+
 
 /* 5. MOBIL-TILPASNING */
 @media (max-width: 48rem) { /* 768px */
