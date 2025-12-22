@@ -1,126 +1,79 @@
-# 🏆 Det Ultimative GFM Master Cheat Sheet
-
-## 1. Overskrifter & Struktur
-# H1 Titel
-## H2 Sektion
-### H3 Undersektion
-#### H4 Detalje
-##### H5 Lille
-###### H6 Mindste
+# 🏆 Universal Markdown Cheat Sheet
+> Dette dokument er optimeret til at se ens ud på GitHub og GitHub Pages.
 
 ---
 
-## 2. Tekstformatering
-* **Fed:** **Tekst** eller __Tekst__
-* *Kursiv:* *Tekst* eller _Tekst_
-* ***Fed & Kursiv:*** ***Tekst***
-* ~~Overstreget:~~ ~~Tekst~~
-* `Inline kode:` `Tekst`
+## 1. Tekst & Struktur
+Man kan bruge **fed skrift**, *kursiv* eller ~~overstregning~~. 
+
+For at lave et linjeskift uden at starte et nyt afsnit,  
+skal du lave to mellemrum i slutningen af linjen.
 
 ---
 
-## 3. Lister & Opgaver
+## 2. Lister & Opgaver
+* Standard punktliste
+  * Indrykket punkt
+1. Nummereret liste
+2. Punkt nummer to
 
-### Punkttegn & Nummerering
-* Punkt 1
-  * Underpunkt
-1. Første
-2. Anden
-   1. Under-nummerering
-
-### Task Lists (Interaktive)
-- [x] Denne opgave er fuldført
-- [ ] Denne opgave mangler stadig
+- [x] En opgave der er klaret
+- [ ] En opgave der mangler
 
 ---
 
-## 4. Alerts & Callouts (Officiel GFM)
-> [!NOTE]
-> Bruges til vigtig baggrundsviden.
+## 3. Citater & "Falske" Alerts
+Da GitHub Pages ikke altid forstår `[!NOTE]`, bruger vi her den klassiske metode, som virker overalt:
 
-> [!TIP]
-> Smarte genveje eller gode råd.
-
-> [!IMPORTANT]
-> Ting brugeren absolut skal vide.
-
-> [!WARNING]
-> Advarsler om potentielle fejl.
-
-> [!CAUTION]
-> Risiko for kritiske fejl eller tab af data.
+> **NOTE:** Dette er en vigtig besked i et citat-felt.
+> Det virker på alle platforme.
 
 ---
 
-## 5. Tabeller
-| Funktion | Justering | Eksempel |
-| :--- | :---: | ---: |
-| Venstrestillet | Centreret | Højrestillet |
-| Linje 2 | `center` | 1.000,00 |
-| Multilinje | Brug <br> | Linje A <br> Linje B |
+## 4. Tabeller
+Husk altid en tom linje over din tabel for at sikre, at den renderes korrekt.
+
+| Funktion | Status | Bemærkning |
+| :--- | :---: | :--- |
+| GFM Tabeller | ✅ Virker | Husk `|` og `-` |
+| Formatering | `Kode` | Kan bruges i celler |
 
 ---
 
-## 6. Kodeblokke (Syntax Highlighting)
-Herunder ser du, hvordan man laver blokkene:
+## 5. Kodeblokke
+Syntax highlighting virker på begge platforme.
 
-```python
-def hilsen():
-    print("Hej fra Python!")
-```
-
-```html
-<h1>Hej fra HTML!</h1>
+```javascript
+function helloWorld() {
+  console.log("Dette virker overalt!");
+}
 ```
 
 ---
 
-## 7. Links, Billeder & Video
-* **Link:** [GitHub](https://github.com)
-* **Autolink:** https://github.com
-* **Billede:** ![Alt-tekst](https://github.com/fluidicon.png)
-* **Video:** ![Beskrivelse](sti/til/video.mp4)
+## 6. Links & Billeder
+* Link: [Besøg Google](https://google.com)
+* Billede: ![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
 
 ---
 
-## 8. Citater & Fodnoter
-> Dette er et citat.
->> Dette er et indlejret citat.
-
-Her er en tekst med en fodnote.[^1]
-
-[^1]: Dette er selve fodnoten, som placeres i bunden af dokumentet.
+## 7. Emojis
+Brug de rigtige symboler i stedet for koder som `:rocket:`, hvis du vil være 100% sikker uden plugins:
+🚀 💡 ✅ ❌ ⚠️
 
 ---
 
-## 9. Matematik (LaTeX)
-Inline: $a^2 + b^2 = c^2$
+## 8. Sammenfoldeligt indhold (HTML)
+Dette er den sikreste måde at skjule tekst på, da begge motorer tillader disse tags:
 
-Blok:
-$$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-$$
-
----
-
-## 10. Organisering & Hemmeligheder
-
-### Sammenfoldelig sektion
 <details>
-<summary>Klik her for at se mere</summary>
+<summary>Klik her for at se detaljer</summary>
 
-Dette indhold er skjult, indtil man trykker på pilen.
+Dette indhold gemmes væk, indtil brugeren klikker.
 </details>
 
-### Kommentarer (Usynlige i renderet version)
-### Escape tegn (Viser tegnene i stedet for formatering)
-\*Dette er ikke kursiv\*
-\# Dette er ikke en overskrift
-\[Dette er ikke et link\]
-
 ---
 
-## 11. GitHub Specifikt
-* **Mentions:** @brugernavn
-* **Issues:** #123
-* **Emojis:** :rocket: :art: :tada: :white_check_mark:
+## 9. Matematiske formler (Billed-metoden)
+Hvis du vil undgå JavaScript-fejl på din hjemmeside, er det sikrest at indsætte formler som billeder, eller bruge standard tekst:
+**E = mc²**
