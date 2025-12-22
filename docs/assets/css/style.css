@@ -1,34 +1,119 @@
+/* 1. LAYOUT & GRUNDLÆGGENDE */
+html {
+  background-color: #f6f8fa; /* Lys grå baggrund udenfor indholdet */
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   font-size: 16px;
-  color: #222;
-  margin: 0;
-  padding: 0 1rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #24292e;
+  background-color: #ffffff; /* Hvid boks til teksten */
+  
+  max-width: 850px;
+  margin: 40px auto; /* Centrerer siden med luft i top/bund */
+  padding: 45px;
+  
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(149,157,165,0.1); /* Blød skygge */
 }
 
-
-.callout {
-  padding: 12px;
-  border-left: 4px solid;
-  margin: 1em 0;
-  border-radius: 4px;
+/* 2. OVERSKRIFTER */
+h1, h2, h3, h4 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
-.callout-note {
-  border-color: #0af;
-  background: #f0f8ff;
+h1 { font-size: 2em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+
+/* 3. LINKS */
+a {
+  color: #0969da;
+  text-decoration: none;
 }
 
-.callout-tip {
-  border-color: #4caf50;
-  background: #f0fff4;
+a:hover {
+  text-decoration: underline;
 }
 
-.callout-warning {
-  border-color: #f44336;
-  background: #fff5f5;
+/* 4. CITATER & ALERTS (F.eks. [!NOTE]) */
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  color: #24292e;
+  background-color: #f6f8fa;
+  border-left: 0.25em solid #0969da; /* Blå stribe */
+  border-radius: 6px;
+}
+
+/* Gør den første fede tekst i et citat til en overskrift (NOTE look) */
+blockquote strong:first-child {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #0969da;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* 5. KODE & PRE-FORMATERET TEKST */
+code {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace;
+  font-size: 85%;
+  background-color: rgba(175, 184, 193, 0.2);
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+}
+
+pre {
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid #dfe2e5;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* 6. TABELLER */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+table th, table td {
+  padding: 8px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+table tr:nth-child(even) {
+  background-color: #f6f8fa;
+}
+
+table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+
+/* 7. BILLEDER */
+img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* 8. MOBIL-TILPASNING */
+@media (max-width: 767px) {
+  body {
+    margin: 10px;
+    padding: 20px;
+  }
 }
