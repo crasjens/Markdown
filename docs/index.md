@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/scripts.js" type="module"></script>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
 
 # Markdown Cheat Sheet
 
@@ -63,7 +64,7 @@ This is the orange colour I think we should use `#ffa500`, what do you think?
 ## Links
 
 [Linktekst](https://example.com)  
-[Link med titel](https://example.com 'Titeltekst')
+[Link med titel](https://example.com 'Titeltekst som vises, når der curseren hviler på linket')
 
 ---
 
@@ -188,6 +189,19 @@ graph LR;
     A[Input] -->|validerer| B{OK?}
     B -->|Ja| C[Gemmer data]
     B -->|Nej| D[Fejl]
+</div>
+
+---
+
+<div class="three-d-container">
+  <model-viewer 
+    src="model.stl" 
+    alt="En 3D model af et terning-hjørne" 
+    auto-rotate 
+    camera-controls 
+    background-color="#f6f8fa"
+    style="width: 100%; height: 400px; border: 1px solid #d0d7de; border-radius: 8px;">
+  </model-viewer>
 </div>
 
 ---
