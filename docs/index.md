@@ -66,11 +66,11 @@ This is the orange colour I think we should use `#ffa500`, what do you think?
 ![Alt-tekst](https://example.com/billede.png)
 
 ---
-<div>
+
 <iframe src="map.html" width="100%" height="600" style="border:none;"></iframe>
-</div>
 
 ---
+
 
 ## Kodeblokke
 
@@ -173,10 +173,6 @@ $$
 graph LR
     Start --> Slut
 ```
-
-<iframe src="map.html" width="100%" height="600" style="border:none;"></iframe>
-
----
 
 <div class="callout callout-note">
   <strong>NOTE:</strong> Dette er en note.
