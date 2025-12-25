@@ -33,3 +33,19 @@ document.querySelectorAll('pre').forEach((codeBlock) => {
   codeBlock.style.position = 'relative';
   codeBlock.appendChild(button);
 });
+
+/**
+ * 3. Konverter GFM-mermaid kodeblokke til <div class="mermaid">
+ * GitHub Pages pakker mermaid-blokke ind i <pre><code>,
+ * hvilket gør at Mermaid ikke kan rendere dem.
+ * Dette script omskriver dem automatisk.
+ */
+document.querySelectorAll('pre > code.language-mermaid').forEach(codeBlock => {
+  const pre = codeBlock.parentElement;
+  const container = document.createElement('div');
+
+  container.className = 'mermaid';
+  container.textContent = codeBlock.textContent;
+
+  pre.replaceWith(container);
+});
