@@ -6,7 +6,7 @@ For den fulde, interaktive dokumentation, se GitHub Pages: (under opbyning)
 👉 https://crasjens.github.io/Markdown/
 
 [!NOTE]
-Dette README viser kun GitHub‑venlige funktioner.
+Dette README 
 
 ## Eksempler
 
