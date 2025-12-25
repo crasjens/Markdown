@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Eksterne links
+  // 1. Eksterne links åbnes i nyt vindue
   document.querySelectorAll('a').forEach(link => {
     if (link.hostname !== window.location.hostname) {
       link.setAttribute('target', '_blank');
@@ -8,15 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Konverter GFM-mermaid kodeblokke til <div class="mermaid">
-  document.querySelectorAll('pre > code.language-mermaid').forEach(codeBlock => {
-    const pre = codeBlock.parentElement;
+  // 2. Find ALLE mermaid-kodeblokke (uanset GitHub-wrapping)
+  document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
+    const pre = codeBlock.closest('pre');   // virker i ALLE GitHub layouts
     const container = document.createElement('div');
 
     container.className = 'mermaid';
-    container.textContent = codeBlock.textContent;
+    container.textContent = codeBlock.textContent.trim();
 
-    pre.replaceWith(container);
+    if (pre) {
+      pre.replaceWith(container);
+    }
   });
 
   // 3. Kør Mermaid EFTER patchen
@@ -24,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mermaid.init();
   }
 
-  // 4. Tilføj copy-knapper til mermaid-diagrammer
-  document.querySelectorAll('.mermaid').forEach((diagram) => {
+  // 4. Tilføj copy-knapper til alle rendrerede mermaid-diagrammer
+  document.querySelectorAll('.mermaid').forEach(diagram => {
     const button = document.createElement('button');
     button.className = 'copy-code-button';
     button.innerText = 'Kopier';
