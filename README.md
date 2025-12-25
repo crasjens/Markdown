@@ -14,6 +14,14 @@ Dette README viser kun GitHub‑venlige funktioner.
 - _Italic_
 - `Inline code`
 
+```mermaid
+graph TD
+    A --> B
+    A --> C
+    B --> D
+    C --> D
+```
+
 ## Links
 
 [Se den fulde dokumentation](https://crasjens.github.io/Markdown/)
