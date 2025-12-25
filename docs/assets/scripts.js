@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pre.replaceWith(container);
   });
 
-  // ⭐ 3. Kør Mermaid EFTER patchen
+  // 3. Kør Mermaid EFTER patchen
   if (window.mermaid) {
     mermaid.init();
   }
