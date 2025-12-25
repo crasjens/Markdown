@@ -17,14 +17,9 @@ Dette indhold bliver nu automatisk lagt ind i "default" layoutet.
 Rene GFM kode ... kommer nok snart her
 
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+graph TD
+    A --> B
+    A --> C
+    B --> D
+    C --> D
 ```
-
-<script type="module">
-  import mermaid from '[https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs](https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs)';
-  mermaid.initialize({ startOnLoad: true });
-</script>
