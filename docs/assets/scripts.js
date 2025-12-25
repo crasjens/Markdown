@@ -49,3 +49,6 @@ document.querySelectorAll('pre > code.language-mermaid').forEach(codeBlock => {
 
   pre.replaceWith(container);
 });
+
+/** * 4. Kør Mermaid igen, nu hvor DOM’en er rettet */ 
+if (window.mermaid) { mermaid.init(); }
