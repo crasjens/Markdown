@@ -1,11 +1,3 @@
----
-layout: default
-title: Kontakt mig
----
-
-# Kontakt
-test
-
 ```mermaid
 classDiagram
 Class01 <|-- AveryLongClass : Cool
