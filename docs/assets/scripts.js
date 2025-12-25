@@ -17,7 +17,7 @@ document.querySelectorAll('a').forEach(link => {
  * Selvom det er ren GFM, er det super brugervenligt at kunne 
  * kopiere din kode med ét klik.
  */
-document.querySelectorAll('pre').forEach((codeBlock) => {
+document.querySelectorAll('mermaid').forEach((codeBlock) => {
   const button = document.createElement('button');
   button.className = 'copy-code-button';
   button.innerText = 'Kopier';
