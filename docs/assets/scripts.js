@@ -22,19 +22,21 @@ if (window.mermaid) {
   mermaid.init();
 }
 
-// 4. Tilføj "Copy"-knap til mermaid-diagrammer
-document.querySelectorAll('.mermaid').forEach((diagram) => {
-  const button = document.createElement('button');
-  button.className = 'copy-code-button';
-  button.innerText = 'Kopier';
+// ⭐ 4. Vent til siden er klar, og tilføj copy-knapper
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.mermaid').forEach((diagram) => {
+    const button = document.createElement('button');
+    button.className = 'copy-code-button';
+    button.innerText = 'Kopier';
 
-  button.addEventListener('click', () => {
-    navigator.clipboard.writeText(diagram.textContent).then(() => {
-      button.innerText = 'Kopieret!';
-      setTimeout(() => { button.innerText = 'Kopier'; }, 2000);
+    button.addEventListener('click', () => {
+      navigator.clipboard.writeText(diagram.textContent).then(() => {
+        button.innerText = 'Kopieret!';
+        setTimeout(() => { button.innerText = 'Kopier'; }, 2000);
+      });
     });
-  });
 
-  diagram.style.position = 'relative';
-  diagram.appendChild(button);
+    diagram.style.position = 'relative';
+    diagram.appendChild(button);
+  });
 });
