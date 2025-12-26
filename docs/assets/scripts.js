@@ -1,4 +1,3 @@
-// // Når hele HTML'en er klar, starter vi
 document.addEventListener('DOMContentLoaded', () => {
 
   //
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 1) Find alle mermaid-kodeblokke og lav dem om til <div class="mermaid">
+  // 1) Patch <pre><code class="language-mermaid"> → <div class="mermaid">
   //
   document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
     const pre = codeBlock.closest('pre');
@@ -29,14 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 2) Kør Mermaid og lad den tegne diagrammerne
-  // (du har allerede mermaid.initialize({ startOnLoad: false }) i layoutet)
+  // 2) Render Mermaid
   //
   if (window.mermaid && mermaid.run) {
-    // Nyere Mermaid (v10) bruger run()
     mermaid.run({ querySelector: '.mermaid' });
   } else if (window.mermaid && mermaid.init) {
-    // Fallback til ældre API
     mermaid.init(undefined, '.mermaid');
   }
 
@@ -66,36 +62,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 4) Zoom/pan med Panzoom på hele .mermaid-containeren
+  // 4) Zoom/pan — KUN på SVG, og KUN når SVG er klar
   //
   function enableZoom(diagram) {
-    if (!window.Panzoom) return;                // Hvis Panzoom ikke er loadet, gør vi ingenting
     if (diagram.dataset.zoomInitialized) return;
+    diagram.dataset.zoomInitialized = "true";
 
-    diagram.dataset.zoomInitialized = 'true';
+    // Vent til Mermaid har tegnet SVG'en færdig
+    setTimeout(() => {
+      const svg = diagram.querySelector('svg');
+      if (!svg) return;
 
-    const panzoom = Panzoom(diagram, {
-      maxScale: 3,
-      minScale: 1,
-      contain: 'outside'
-    });
+      const panzoom = Panzoom(svg, {
+        maxScale: 3,
+        minScale: 1,
+        contain: 'outside'
+      });
 
-    // Scroll-zoom
-    diagram.addEventListener('wheel', panzoom.zoomWithWheel);
+      // Scroll-zoom
+      svg.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+
+    }, 50);
   }
 
 
 
   //
-  // 5) Når Mermaid har tegnet, tilføj knapper og zoom
-  //
-  // Vi venter 50 ms for at være sikre på, at SVG'erne er på plads.
+  // 5) Når alt er tegnet → tilføj UI
   //
   setTimeout(() => {
     document.querySelectorAll('.mermaid').forEach(diagram => {
       addCopyButton(diagram);
       enableZoom(diagram);
     });
-  }, 50);
+  }, 100);
 
 });
