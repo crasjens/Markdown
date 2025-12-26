@@ -17,11 +17,13 @@ Dette indhold bliver nu automatisk lagt ind i "default" layoutet.
 Rene GFM kode ... kommer nok snart her
 
 ```mermaid
+%%{init: { "flowchart": { "nodeSpacing": 20, "rankSpacing": 20 }}}%%
 graph TD
     A --> B
     A --> C
     B --> D
     C --> D
+
 ```
 
 ```mermaid
