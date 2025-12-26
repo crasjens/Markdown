@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //
   // Denne blok finder alle kodeblokke med "language-mermaid"
   // og erstatter dem med en <div class="mermaid">, som Mermaid kan arbejde med.
-  // 2) Patch <pre><code class="language-mermaid"> → <div class="mermaid">
+  // Patch <pre><code class="language-mermaid"> → <div class="mermaid">
   //
   document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
 
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // -------------------------------------------------------------
   // Mermaid genererer SVG’er asynkront.
   // Vi kalder enten mermaid.run (ny API) eller mermaid.init (gammel API).
- //
+  //
   if (window.mermaid && mermaid.run) {
     // mermaid.run({ querySelector: '.mermaid' })
     // - Mermaid API der finder alle .mermaid-elementer og renderer dem
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //   </div>
   //
   // Det er *panzoom-inner*, der får baggrundsfarve og bliver zoomet.
-  // 4) Wrap SVG i panzoom-inner
+  // Wrap SVG i panzoom-inner
   //
   function wrapSvgInPanzoomInner(diagram) {
 
