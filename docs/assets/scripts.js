@@ -138,6 +138,9 @@
 //   }
 
 // });
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   //
@@ -179,17 +182,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 4) Fjern Mermaid’s auto-transform (kritisk)
+  // 4) Fjern Mermaid’s auto-transform OG height="100%"
   //
-  function cleanUpMermaidTransform(diagram) {
+  function cleanUpSvg(diagram) {
     const svg = diagram.querySelector('svg');
     if (!svg) return;
 
-    // Fjern alt Mermaid har sat
+    // Fjern Mermaid’s auto-zoom
     svg.style.transform = 'none';
     svg.style.maxWidth = 'none';
     svg.style.transition = 'none';
     svg.style.transformOrigin = 'center center';
+
+    // Fjern den ENE ting der ødelægger alt
+    svg.removeAttribute('height');   // ← den vigtige linje
+    svg.setAttribute('width', '100%');
   }
 
 
@@ -217,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 6) Panzoom (kun på ren SVG)
+  // 6) Panzoom
   //
   function enableZoom(diagram) {
     if (!window.Panzoom) return;
@@ -240,11 +247,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 7) Når Mermaid er færdig → ryd transform → UI → zoom
+  // 7) Når Mermaid er færdig → fix SVG → UI → zoom
   //
   setTimeout(() => {
     document.querySelectorAll('.mermaid').forEach(diagram => {
-      cleanUpMermaidTransform(diagram);
+      cleanUpSvg(diagram);
       addCopyButton(diagram);
       enableZoom(diagram);
     });
