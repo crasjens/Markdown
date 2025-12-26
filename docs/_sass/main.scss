@@ -75,6 +75,10 @@ pre {
   margin: 2rem auto;
   overflow: hidden;
   position: relative;
+  .mermaid {
+  background: #f5f7fa;   /* lys grå-blå, GitHub-agtig */
+}
+
 }
 
 .mermaid svg {
