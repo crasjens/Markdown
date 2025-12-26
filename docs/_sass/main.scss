@@ -61,6 +61,12 @@ pre {
     overflow: auto;
 }
 
+.mermaid svg {
+  max-width: none !important;
+  transform: none !important;
+}
+
+
 /* --- Navigation --- */
 .main-nav {
     z-index: 10;
