@@ -63,6 +63,7 @@ pre {
 
 /* --- Navigation --- */
 .main-nav {
+    z-index: 10;
     background-color: #24292f;
     padding: 1rem 0;
     margin-bottom: 2rem;
@@ -106,7 +107,7 @@ pre {
   position: absolute;
   top: 6px;
   right: 6px;
-  z-index: 9999;
+  z-index: 1;
   background: #e74c3c;
   color: white;
   border: none;
