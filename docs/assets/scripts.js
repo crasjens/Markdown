@@ -1,148 +1,10 @@
-// document.addEventListener('DOMContentLoaded', () => {
-
-//   //
-//   // 0) Eksterne links i nyt vindue
-//   //
-//   document.querySelectorAll('a').forEach(link => {
-//     if (link.hostname && link.hostname !== window.location.hostname) {
-//       link.setAttribute('target', '_blank');
-//       link.setAttribute('rel', 'noopener noreferrer');
-//     }
-//   });
-
-
-
-//   //
-//   // 1) Patch <pre><code class="language-mermaid"> → <div class="mermaid">
-//   //
-//   document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
-//     const pre = codeBlock.closest('pre');
-//     const container = document.createElement('div');
-
-//     container.className = 'mermaid';
-//     container.textContent = codeBlock.textContent.trim();
-
-//     if (pre) pre.replaceWith(container);
-//   });
-
-
-
-//   //
-//   // 2) Render Mermaid
-//   //
-//   if (window.mermaid && mermaid.run) {
-//     mermaid.run({ querySelector: '.mermaid' });
-//   } else if (window.mermaid && mermaid.init) {
-//     mermaid.init(undefined, '.mermaid');
-//   }
-
-
-
-//   //
-//   // 3) Kopier-knap
-//   //
-//   function addCopyButton(diagram) {
-//     if (diagram.querySelector('.copy-code-button')) return;
-
-//     const button = document.createElement('button');
-//     button.className = 'copy-code-button';
-//     button.innerText = 'Kopier';
-
-//     button.addEventListener('click', () => {
-//       navigator.clipboard.writeText(diagram.textContent).then(() => {
-//         button.innerText = 'Kopieret!';
-//         setTimeout(() => { button.innerText = 'Kopier'; }, 2000);
-//       });
-//     });
-
-//     diagram.style.position = 'relative';
-//     diagram.appendChild(button);
-//   }
-
-
-
-//   //
-//   // 4) Normaliser SVG + tilføj zoom/pan
-//   //
-//   function enableZoom(diagram) {
-//     if (!window.Panzoom) return;
-//     if (diagram.dataset.zoomInitialized) return;
-//     diagram.dataset.zoomInitialized = "true";
-
-//     // Vent til Mermaid er færdig med at tegne
-//     setTimeout(() => {
-//       const svg = diagram.querySelector('svg');
-//       if (!svg) return;
-
-//       // 4a) Ryd Mermaid’s egen transform/size-rod
-//       svg.removeAttribute('style');        // fjerner bl.a. transform: scale(3) og max-width
-//       svg.setAttribute('width', '100%');
-//       svg.setAttribute('height', '100%');
-//       svg.style.display = 'block';
-
-//       // 4b) Sørg for at containeren kan rumme zoom
-//       diagram.style.overflow = 'hidden';
-
-//       // 4c) Panzoom på SELVE SVG'en – nu ren og neutral
-//       const panzoom = Panzoom(svg, {
-//         maxScale: 3,
-//         minScale: 1,
-//         contain: 'outside'
-//       });
-
-//       // Scroll-zoom
-//       svg.addEventListener('wheel', panzoom.zoomWithWheel);
-
-//     }, 50);
-//   }
-
-
-
-//   //
-//   // 5) Efter render → UI + zoom
-//   //
-//   setTimeout(() => {
-//     document.querySelectorAll('.mermaid').forEach(diagram => {
-//       addCopyButton(diagram);
-//       enableZoom(diagram);
-//     });
-//   }, 100);
-
-// });
-// document.addEventListener('DOMContentLoaded', () => {
-
-//   // 0) Eksterne links i nyt vindue
-//   document.querySelectorAll('a').forEach(link => {
-//     if (link.hostname && link.hostname !== window.location.hostname) {
-//       link.setAttribute('target', '_blank');
-//       link.setAttribute('rel', 'noopener noreferrer');
-//     }
-//   });
-
-//   // 1) Patch <pre><code class="language-mermaid"> → <div class="mermaid">
-//   document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
-//     const pre = codeBlock.closest('pre');
-//     const container = document.createElement('div');
-
-//     container.className = 'mermaid';
-//     container.textContent = codeBlock.textContent.trim();
-
-//     if (pre) pre.replaceWith(container);
-//   });
-
-//   // 2) Render Mermaid (v10+)
-//   if (window.mermaid && mermaid.run) {
-//     mermaid.run({ querySelector: '.mermaid' });
-//   } else if (window.mermaid && mermaid.init) {
-//     mermaid.init(undefined, '.mermaid');
-//   }
-
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  //
-  // 1) Eksterne links i nyt vindue
+  // -------------------------------------------------------------
+  // 1) ÅBN EKSTERNE LINKS I NYT VINDUE
+  // -------------------------------------------------------------
+  // GitHub Pages åbner normalt alle links i samme vindue.
+  // Her sørger vi for, at links til andre domæner åbner i nyt vindue.
   //
   document.querySelectorAll('a').forEach(link => {
     if (link.hostname && link.hostname !== window.location.hostname) {
@@ -153,8 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  // -------------------------------------------------------------
+  // 2) ERSTAT <pre><code class="language-mermaid"> MED <div class="mermaid">
+  // -------------------------------------------------------------
+  // GitHub Pages viser kodeblokke som tekst.
+  // Mermaid kræver derimod en <div class="mermaid"> med ren tekst indeni.
   //
-  // 2) Patch <pre><code class="language-mermaid"> → <div class="mermaid">
+  // Denne blok finder alle kodeblokke med "language-mermaid"
+  // og erstatter dem med en <div class="mermaid">, som Mermaid kan arbejde med.
   //
   document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
     const pre = codeBlock.closest('pre');
@@ -168,8 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  //
-  // 3) Render Mermaid
+  // -------------------------------------------------------------
+  // 3) RENDER MERMAID
+  // -------------------------------------------------------------
+  // Mermaid genererer SVG’er asynkront.
+  // Vi kalder enten mermaid.run (ny API) eller mermaid.init (gammel API).
   //
   if (window.mermaid && mermaid.run) {
     mermaid.run({ querySelector: '.mermaid' });
@@ -179,44 +50,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  // -------------------------------------------------------------
+  // 4) WRAP SVG I ET INDRE PANZOOM-LAG
+  // -------------------------------------------------------------
+  // Mermaid genererer kun:
+  //   <div class="mermaid"><svg>...</svg></div>
   //
-  // 4) Wrap SVG i panzoom-inner (det indre panorerings-rum)
+  // Men for at få en baggrundsfarve i "panoreringsrummet",
+  // skal SVG’en ligge inde i et ekstra lag:
+  //
+  //   <div class="mermaid">
+  //       <div class="panzoom-inner">
+  //           <svg>...</svg>
+  //       </div>
+  //   </div>
+  //
+  // Det er *panzoom-inner*, der får baggrundsfarve og bliver zoomet.
   //
   function wrapSvgInPanzoomInner(diagram) {
+    // Undgå at wrappe to gange
     if (diagram.querySelector('.panzoom-inner')) return;
 
     const svg = diagram.querySelector('svg');
-    if (!svg) return;
+    if (!svg) return; // Mermaid er ikke færdig endnu
 
     const inner = document.createElement('div');
     inner.classList.add('panzoom-inner');
 
+    // Flyt SVG ind i det nye lag
     inner.appendChild(svg);
+
+    // Tilføj laget til containeren
     diagram.appendChild(inner);
   }
 
 
 
+  // -------------------------------------------------------------
+  // 5) FJERN MERMAID’S AUTO-ZOOM OG HEIGHT="100%"
+  // -------------------------------------------------------------
+  // Mermaid sætter height="100%" på SVG’en.
+  // Det gør SVG’en gigantisk høj og ødelægger Panzoom.
   //
-  // 5) Fjern Mermaid’s auto-transform + height="100%"
+  // Vi fjerner height og sætter width="100%" i stedet.
   //
   function cleanUpSvg(diagram) {
     const svg = diagram.querySelector('svg');
     if (!svg) return;
 
+    // Fjern auto-transform
     svg.style.transform = 'none';
     svg.style.maxWidth = 'none';
     svg.style.transition = 'none';
     svg.style.transformOrigin = 'center center';
 
+    // Den vigtigste linje:
     svg.removeAttribute('height');
+
+    // Gør SVG responsiv i bredden
     svg.setAttribute('width', '100%');
   }
 
 
 
-  //
-  // 6) Kopier-knap
+  // -------------------------------------------------------------
+  // 6) KOPIER-KNAP
+  // -------------------------------------------------------------
+  // Tilføjer en lille knap, der kopierer Mermaid-koden.
   //
   function addCopyButton(diagram) {
     if (diagram.querySelector('.copy-code-button')) return;
@@ -237,8 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  //
-  // 7) Panzoom på panzoom-inner
+  // -------------------------------------------------------------
+  // 7) PANZOOM PÅ DET INDRE LAG
+  // -------------------------------------------------------------
+  // Panzoom skal IKKE køre på SVG’en direkte.
+  // Det skal køre på panzoom-inner, så baggrunden følger med.
   //
   function enableZoom(diagram) {
     if (!window.Panzoom) return;
@@ -260,8 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  //
-  // 8) Når Mermaid er færdig → wrap → cleanup → UI → zoom
+  // -------------------------------------------------------------
+  // 8) EFTER MERMAID ER FÆRDIG → WRAP → CLEANUP → UI → ZOOM
+  // -------------------------------------------------------------
+  // Mermaid renderer asynkront, så vi venter 500ms.
+  // Derefter:
+  //   1) Wrap SVG i panzoom-inner
+  //   2) Fix SVG-størrelse
+  //   3) Tilføj kopier-knap
+  //   4) Aktivér Panzoom
   //
   setTimeout(() => {
     document.querySelectorAll('.mermaid').forEach(diagram => {
