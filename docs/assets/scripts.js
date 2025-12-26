@@ -139,8 +139,6 @@
 
 // });
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
   //
@@ -168,28 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pre) pre.replaceWith(container);
   });
 
-  document.querySelectorAll('.mermaid').forEach(container => {
-    const svg = container.querySelector('svg');
-    if (!svg) return;
-
-    // Opret et indre panzoom-lag
-    const inner = document.createElement('div');
-    inner.classList.add('panzoom-inner');
-
-    // Flyt SVG ind i det nye lag
-    inner.appendChild(svg);
-
-    // Læg laget ind i containeren
-    container.appendChild(inner);
-
-    // Start Panzoom på inner-laget
-    panzoom(inner, {
-        maxZoom: 5,
-        minZoom: 0.5,
-        bounds: false
-    });
-});
-
 
 
   //
@@ -204,27 +180,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 4) Fjern Mermaid’s auto-transform OG height="100%"
+  // 4) Wrap SVG i panzoom-inner (det indre panorerings-rum)
+  //
+  function wrapSvgInPanzoomInner(diagram) {
+    if (diagram.querySelector('.panzoom-inner')) return;
+
+    const svg = diagram.querySelector('svg');
+    if (!svg) return;
+
+    const inner = document.createElement('div');
+    inner.classList.add('panzoom-inner');
+
+    inner.appendChild(svg);
+    diagram.appendChild(inner);
+  }
+
+
+
+  //
+  // 5) Fjern Mermaid’s auto-transform + height="100%"
   //
   function cleanUpSvg(diagram) {
     const svg = diagram.querySelector('svg');
     if (!svg) return;
 
-    // Fjern Mermaid’s auto-zoom
     svg.style.transform = 'none';
     svg.style.maxWidth = 'none';
     svg.style.transition = 'none';
     svg.style.transformOrigin = 'center center';
 
-    // Fjern den ENE ting der ødelægger alt
-    svg.removeAttribute('height');   // ← den vigtige linje
+    svg.removeAttribute('height');
     svg.setAttribute('width', '100%');
   }
 
 
 
   //
-  // 5) Kopier-knap
+  // 6) Kopier-knap
   //
   function addCopyButton(diagram) {
     if (diagram.querySelector('.copy-code-button')) return;
@@ -246,33 +238,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 6) Panzoom
+  // 7) Panzoom på panzoom-inner
   //
   function enableZoom(diagram) {
     if (!window.Panzoom) return;
     if (diagram.dataset.zoomInitialized) return;
 
+    const inner = diagram.querySelector('.panzoom-inner');
+    if (!inner) return;
+
     diagram.dataset.zoomInitialized = "true";
 
-    const svg = diagram.querySelector('svg');
-    if (!svg) return;
-
-    const panzoom = Panzoom(svg, {
+    const panzoom = Panzoom(inner, {
       maxScale: 3,
       minScale: 1,
       contain: 'outside'
     });
 
-    svg.addEventListener('wheel', panzoom.zoomWithWheel);
+    inner.addEventListener('wheel', panzoom.zoomWithWheel);
   }
 
 
 
   //
-  // 7) Når Mermaid er færdig → fix SVG → UI → zoom
+  // 8) Når Mermaid er færdig → wrap → cleanup → UI → zoom
   //
   setTimeout(() => {
     document.querySelectorAll('.mermaid').forEach(diagram => {
+      wrapSvgInPanzoomInner(diagram);
       cleanUpSvg(diagram);
       addCopyButton(diagram);
       enableZoom(diagram);
