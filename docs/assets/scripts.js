@@ -168,6 +168,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pre) pre.replaceWith(container);
   });
 
+  document.querySelectorAll('.mermaid').forEach(container => {
+    const svg = container.querySelector('svg');
+    if (!svg) return;
+
+    // Opret et indre panzoom-lag
+    const inner = document.createElement('div');
+    inner.classList.add('panzoom-inner');
+
+    // Flyt SVG ind i det nye lag
+    inner.appendChild(svg);
+
+    // Læg laget ind i containeren
+    container.appendChild(inner);
+
+    // Start Panzoom på inner-laget
+    panzoom(inner, {
+        maxZoom: 5,
+        minZoom: 0.5,
+        bounds: false
+    });
+});
+
 
 
   //
