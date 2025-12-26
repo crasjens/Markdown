@@ -99,5 +99,15 @@ pre {
 }
 
 .copy-code-button {
-    background-color: red;
+     position: absolute; 
+     top: 8px; 
+     right: 8px; 
+     z-index: 9999; 
+     background: #e74c3c; 
+     color: white; 
+     border: none; 
+     padding: 4px 8px; 
+     border-radius: 4px; 
+     cursor: pointer; 
+     font-size: 12px;
 }
