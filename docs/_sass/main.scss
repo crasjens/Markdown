@@ -61,22 +61,22 @@ pre {
     overflow: auto;
 }
 
-/* Containeren skal styre størrelsen */
+/* Containeren styrer størrelsen */
 .mermaid {
-  max-width: 600px;
+  width: 100%;
+  max-width: 25rem;     /* 400px */
+  height: 18.75rem;     /* 300px */
   margin: 2rem auto;
   overflow: hidden;
   position: relative;
 }
 
 .mermaid svg {
-  width: 100% !important;
-  height: auto !important;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
-  max-width: none !important;
-  transform: none !important;
 }
-
 
 
 
