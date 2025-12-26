@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Find ALLE mermaid-kodeblokke (uanset GitHub-wrapping)
   document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
-    const pre = codeBlock.closest('pre');   // virker i ALLE GitHub layouts
+    const pre = codeBlock.closest('pre');
     const container = document.createElement('div');
 
     container.className = 'mermaid';
@@ -26,8 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     mermaid.init();
   }
 
-  // 4. Tilføj copy-knapper til alle rendrerede mermaid-diagrammer
+  // 4. Tilføj copy-knapper til ALLE mermaid-diagrammer
   document.querySelectorAll('.mermaid').forEach(diagram => {
+
+    // Undgå dobbelt-knapper
+    if (diagram.querySelector('.copy-code-button')) return;
+
     const button = document.createElement('button');
     button.className = 'copy-code-button';
     button.innerText = 'Kopier';
