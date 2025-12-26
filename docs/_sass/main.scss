@@ -62,9 +62,12 @@ pre {
 }
 
 .mermaid svg {
+  width: 100% !important;
+  height: auto !important;
   max-width: none !important;
   transform: none !important;
 }
+
 
 
 /* --- Navigation --- */
