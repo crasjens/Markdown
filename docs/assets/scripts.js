@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   //
-  // 0) Eksterne links åbnes i nyt vindue
+  // 0) Eksterne links i nyt vindue
   //
   document.querySelectorAll('a').forEach(link => {
     if (link.hostname && link.hostname !== window.location.hostname) {
@@ -62,17 +62,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 4) Zoom/pan — KUN på SVG, og KUN når SVG er klar
+  // 4) Normaliser SVG + tilføj zoom/pan
   //
   function enableZoom(diagram) {
+    if (!window.Panzoom) return;
     if (diagram.dataset.zoomInitialized) return;
     diagram.dataset.zoomInitialized = "true";
 
-    // Vent til Mermaid har tegnet SVG'en færdig
+    // Vent til Mermaid er færdig med at tegne
     setTimeout(() => {
       const svg = diagram.querySelector('svg');
       if (!svg) return;
 
+      // 4a) Ryd Mermaid’s egen transform/size-rod
+      svg.removeAttribute('style');        // fjerner bl.a. transform: scale(3) og max-width
+      svg.setAttribute('width', '100%');
+      svg.setAttribute('height', '100%');
+      svg.style.display = 'block';
+
+      // 4b) Sørg for at containeren kan rumme zoom
+      diagram.style.overflow = 'hidden';
+
+      // 4c) Panzoom på SELVE SVG'en – nu ren og neutral
       const panzoom = Panzoom(svg, {
         maxScale: 3,
         minScale: 1,
@@ -80,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Scroll-zoom
-      svg.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+      svg.addEventListener('wheel', panzoom.zoomWithWheel);
 
     }, 50);
   }
@@ -88,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 5) Når alt er tegnet → tilføj UI
+  // 5) Efter render → UI + zoom
   //
   setTimeout(() => {
     document.querySelectorAll('.mermaid').forEach(diagram => {
