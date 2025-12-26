@@ -61,9 +61,23 @@ pre {
     overflow: auto;
 }
 
-.mermaid svg {
-
+/* Containeren skal styre størrelsen */
+.mermaid {
+  max-width: 37.5rem
+  margin: 2rem auto;
+  overflow: hidden;
+  position: relative;
 }
+
+/* SVG skal IKKE strækkes i højden */
+.mermaid svg {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  max-width: none !important;
+  transform: none !important;
+}
+
 
 
 

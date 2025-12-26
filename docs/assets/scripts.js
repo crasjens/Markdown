@@ -109,9 +109,40 @@
 //   }, 100);
 
 // });
+// document.addEventListener('DOMContentLoaded', () => {
+
+//   // 0) Eksterne links i nyt vindue
+//   document.querySelectorAll('a').forEach(link => {
+//     if (link.hostname && link.hostname !== window.location.hostname) {
+//       link.setAttribute('target', '_blank');
+//       link.setAttribute('rel', 'noopener noreferrer');
+//     }
+//   });
+
+//   // 1) Patch <pre><code class="language-mermaid"> → <div class="mermaid">
+//   document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
+//     const pre = codeBlock.closest('pre');
+//     const container = document.createElement('div');
+
+//     container.className = 'mermaid';
+//     container.textContent = codeBlock.textContent.trim();
+
+//     if (pre) pre.replaceWith(container);
+//   });
+
+//   // 2) Render Mermaid (v10+)
+//   if (window.mermaid && mermaid.run) {
+//     mermaid.run({ querySelector: '.mermaid' });
+//   } else if (window.mermaid && mermaid.init) {
+//     mermaid.init(undefined, '.mermaid');
+//   }
+
+// });
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 0) Eksterne links i nyt vindue
+  //
+  // 1) Eksterne links i nyt vindue
+  //
   document.querySelectorAll('a').forEach(link => {
     if (link.hostname && link.hostname !== window.location.hostname) {
       link.setAttribute('target', '_blank');
@@ -119,7 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 1) Patch <pre><code class="language-mermaid"> → <div class="mermaid">
+
+
+  //
+  // 2) Patch <pre><code class="language-mermaid"> → <div class="mermaid">
+  //
   document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
     const pre = codeBlock.closest('pre');
     const container = document.createElement('div');
@@ -130,11 +165,89 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pre) pre.replaceWith(container);
   });
 
-  // 2) Render Mermaid (v10+)
+
+
+  //
+  // 3) Render Mermaid
+  //
   if (window.mermaid && mermaid.run) {
     mermaid.run({ querySelector: '.mermaid' });
   } else if (window.mermaid && mermaid.init) {
     mermaid.init(undefined, '.mermaid');
   }
+
+
+
+  //
+  // 4) Fjern Mermaid’s auto-transform (kritisk)
+  //
+  function cleanUpMermaidTransform(diagram) {
+    const svg = diagram.querySelector('svg');
+    if (!svg) return;
+
+    // Fjern alt Mermaid har sat
+    svg.style.transform = 'none';
+    svg.style.maxWidth = 'none';
+    svg.style.transition = 'none';
+    svg.style.transformOrigin = 'center center';
+  }
+
+
+
+  //
+  // 5) Kopier-knap
+  //
+  function addCopyButton(diagram) {
+    if (diagram.querySelector('.copy-code-button')) return;
+
+    const button = document.createElement('button');
+    button.className = 'copy-code-button';
+    button.innerText = 'Kopier';
+
+    button.addEventListener('click', () => {
+      navigator.clipboard.writeText(diagram.textContent).then(() => {
+        button.innerText = 'Kopieret!';
+        setTimeout(() => { button.innerText = 'Kopier'; }, 2000);
+      });
+    });
+
+    diagram.appendChild(button);
+  }
+
+
+
+  //
+  // 6) Panzoom (kun på ren SVG)
+  //
+  function enableZoom(diagram) {
+    if (!window.Panzoom) return;
+    if (diagram.dataset.zoomInitialized) return;
+
+    diagram.dataset.zoomInitialized = "true";
+
+    const svg = diagram.querySelector('svg');
+    if (!svg) return;
+
+    const panzoom = Panzoom(svg, {
+      maxScale: 3,
+      minScale: 1,
+      contain: 'outside'
+    });
+
+    svg.addEventListener('wheel', panzoom.zoomWithWheel);
+  }
+
+
+
+  //
+  // 7) Når Mermaid er færdig → ryd transform → UI → zoom
+  //
+  setTimeout(() => {
+    document.querySelectorAll('.mermaid').forEach(diagram => {
+      cleanUpMermaidTransform(diagram);
+      addCopyButton(diagram);
+      enableZoom(diagram);
+    });
+  }, 500);
 
 });
