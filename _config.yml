@@ -1,9 +1,9 @@
 # Fortæl Jekyll at kildematerialet nu ligger i /docs
 source: docs
 
-layout: default
-theme: [] 
-remote_theme: []
+markdown: kramdown
 kramdown:
+  input: GFM
   syntax_highlighter_opts:
     disable: true
+
