@@ -1,11 +1,11 @@
-// Når hele HTML'en er klar, starter vi
+// // Når hele HTML'en er klar, starter vi
 document.addEventListener('DOMContentLoaded', () => {
 
   //
   // 0) Eksterne links åbnes i nyt vindue
   //
   document.querySelectorAll('a').forEach(link => {
-    if (link.hostname !== window.location.hostname) {
+    if (link.hostname && link.hostname !== window.location.hostname) {
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener noreferrer');
     }
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1) Find alle mermaid-kodeblokke og lav dem om til <div class="mermaid">
   //
   document.querySelectorAll('code.language-mermaid').forEach(codeBlock => {
-
     const pre = codeBlock.closest('pre');
     const container = document.createElement('div');
 
@@ -31,18 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //
   // 2) Kør Mermaid og lad den tegne diagrammerne
+  // (du har allerede mermaid.initialize({ startOnLoad: false }) i layoutet)
   //
-  if (window.mermaid) {
-    mermaid.init();
+  if (window.mermaid && mermaid.run) {
+    // Nyere Mermaid (v10) bruger run()
+    mermaid.run({ querySelector: '.mermaid' });
+  } else if (window.mermaid && mermaid.init) {
+    // Fallback til ældre API
+    mermaid.init(undefined, '.mermaid');
   }
 
 
 
   //
-  // 3) Tilføj "Kopier"-knap
+  // 3) Kopier-knap
   //
   function addCopyButton(diagram) {
-
     if (diagram.querySelector('.copy-code-button')) return;
 
     const button = document.createElement('button');
@@ -63,78 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //
-  // 4) Zoom/pan med Panzoom — kun én gang pr. diagram
+  // 4) Zoom/pan med Panzoom på hele .mermaid-containeren
   //
   function enableZoom(diagram) {
-
-    // Undgå dobbelt-initialisering
+    if (!window.Panzoom) return;                // Hvis Panzoom ikke er loadet, gør vi ingenting
     if (diagram.dataset.zoomInitialized) return;
-    diagram.dataset.zoomInitialized = "true";
 
-    const svg = diagram.querySelector('svg');
-    if (!svg) return;
+    diagram.dataset.zoomInitialized = 'true';
 
-    Panzoom(svg, {
-      maxScale: 5,
+    const panzoom = Panzoom(diagram, {
+      maxScale: 3,
       minScale: 1,
       contain: 'outside'
     });
+
+    // Scroll-zoom
+    diagram.addEventListener('wheel', panzoom.zoomWithWheel);
   }
 
 
 
   //
-  // 5) Når Mermaid er færdig med at tegne, tilføjer vi UI
+  // 5) Når Mermaid har tegnet, tilføj knapper og zoom
   //
-  // Først venter vi til næste tick (0 ms)
-  // Derefter venter vi 10 ms ekstra, så SVG'en er helt klar
+  // Vi venter 50 ms for at være sikre på, at SVG'erne er på plads.
   //
   setTimeout(() => {
     document.querySelectorAll('.mermaid').forEach(diagram => {
-
       addCopyButton(diagram);
-
-      // Vent lidt ekstra før zoom initialiseres
-      setTimeout(() => {
-        enableZoom(diagram);
-      }, 10);
-
+      enableZoom(diagram);
     });
-  }, 0);
-
-
-
-  //
-  // 6) MutationObserver — håndterer nye diagrammer
-  //
-  const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      mutation.addedNodes.forEach(node => {
-
-        if (node.classList && node.classList.contains('mermaid')) {
-
-          addCopyButton(node);
-
-          setTimeout(() => {
-            enableZoom(node);
-          }, 10);
-        }
-
-        if (node.querySelectorAll) {
-          node.querySelectorAll('.mermaid').forEach(diagram => {
-
-            addCopyButton(diagram);
-
-            setTimeout(() => {
-              enableZoom(diagram);
-            }, 10);
-
-          });
-        }
-      });
-    });
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
+  }, 50);
 
 });
