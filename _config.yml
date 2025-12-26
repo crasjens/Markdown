@@ -4,3 +4,6 @@ source: docs
 layout: default
 theme: [] 
 remote_theme: []
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
