@@ -194,33 +194,33 @@ pre {
 	content: 'ℹ️ Note';
 	font-weight: bold;
 	display: block;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
 
 .admonition.tip::before {
 	content: '💡 Tip';
 	font-weight: bold;
 	display: block;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
 
 .admonition.important::before {
 	content: '📌 Important';
 	font-weight: bold;
 	display: block;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
 
 .admonition.warning::before {
 	content: '⚠️ Warning';
 	font-weight: bold;
 	display: block;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
 
 .admonition.caution::before {
 	content: '🚧 Caution';
 	font-weight: bold;
 	display: block;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
