@@ -156,38 +156,71 @@ pre {
 
 /* Base style */
 .admonition {
-	padding: 0.8em 1em;
-	border-radius: 4px;
-	margin: 1em 0;
-	border-left: 4px solid;
+	padding: 1em 1.2em;
+	border-radius: 6px;
+	margin: 1.2em 0;
+	border-left: 6px solid;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	font-size: 0.95em;
 }
 
-/* NOTE */
+/* Farver */
 .admonition.note {
 	background: #f3f9fd;
 	border-color: #0078d4;
 }
 
-/* TIP */
 .admonition.tip {
 	background: #f3fcf3;
 	border-color: #2b9e2b;
 }
 
-/* IMPORTANT */
 .admonition.important {
 	background: #f8f5fc;
 	border-color: #5c2d91;
 }
 
-/* WARNING */
 .admonition.warning {
 	background: #fff4f2;
 	border-color: #d83b01;
 }
 
-/* CAUTION */
 .admonition.caution {
 	background: #fff5f7;
 	border-color: #e81123;
+}
+
+.admonition.note::before {
+	content: 'ℹ️ Note';
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+.admonition.tip::before {
+	content: '💡 Tip';
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+.admonition.important::before {
+	content: '📌 Important';
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+.admonition.warning::before {
+	content: '⚠️ Warning';
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+.admonition.caution::before {
+	content: '🚧 Caution';
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5em;
 }
