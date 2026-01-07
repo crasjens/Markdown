@@ -242,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				// Fjern skjult linjeskift efter tagget
 				p.innerHTML = p.innerHTML.replace(/^\s+/, '');
+				p.innerHTML = p.innerHTML.replace(/\n+/g, ' ');
 			}
 		}
 	});
