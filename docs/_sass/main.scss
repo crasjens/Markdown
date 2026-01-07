@@ -155,39 +155,35 @@ pre {
 }
 
 /* NOTE */
-blockquote:has(> p:first-child:contains('[!NOTE]')) {
+blockquote:has(p:contains('[!NOTE]')) {
 	border-left: 4px solid #0078d4;
 	background: #f3f9fd;
 	padding: 0.8em 1em;
 	border-radius: 4px;
 }
 
-/* TIP */
-blockquote:has(> p:first-child:contains('[!TIP]')) {
+blockquote:has(p:contains('[!TIP]')) {
 	border-left: 4px solid #2b9e2b;
 	background: #f3fcf3;
 	padding: 0.8em 1em;
 	border-radius: 4px;
 }
 
-/* IMPORTANT */
-blockquote:has(> p:first-child:contains('[!IMPORTANT]')) {
+blockquote:has(p:contains('[!IMPORTANT]')) {
 	border-left: 4px solid #5c2d91;
 	background: #f8f5fc;
 	padding: 0.8em 1em;
 	border-radius: 4px;
 }
 
-/* WARNING */
-blockquote:has(> p:first-child:contains('[!WARNING]')) {
+blockquote:has(p:contains('[!WARNING]')) {
 	border-left: 4px solid #d83b01;
 	background: #fff4f2;
 	padding: 0.8em 1em;
 	border-radius: 4px;
 }
 
-/* CAUTION */
-blockquote:has(> p:first-child:contains('[!CAUTION]')) {
+blockquote:has(p:contains('[!CAUTION]')) {
 	border-left: 4px solid #e81123;
 	background: #fff5f7;
 	padding: 0.8em 1em;
