@@ -317,7 +317,6 @@ graph LR;
 
 ```mermaid
 graph LR;
-
     A[Markdown Cheat Sheet] --> B[Typografi];
     A --> C[Lister];
     A --> D[Links & Billeder];
@@ -364,7 +363,8 @@ graph LR;
     H --> H5[Definition Lists];
 ```
 
----
+> [!NOTE]
+> Dette er en test.
 
 > [!NOTE]  
 > Highlights information that users should take into account, even when skimming.
