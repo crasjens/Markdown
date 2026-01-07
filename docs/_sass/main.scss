@@ -154,38 +154,40 @@ pre {
 	font-size: 12px;
 }
 
+/* Base style */
+.admonition {
+	padding: 0.8em 1em;
+	border-radius: 4px;
+	margin: 1em 0;
+	border-left: 4px solid;
+}
+
 /* NOTE */
-blockquote:has(p:contains('[!NOTE]')) {
-	border-left: 4px solid #0078d4;
+.admonition.note {
 	background: #f3f9fd;
-	padding: 0.8em 1em;
-	border-radius: 4px;
+	border-color: #0078d4;
 }
 
-blockquote:has(p:contains('[!TIP]')) {
-	border-left: 4px solid #2b9e2b;
+/* TIP */
+.admonition.tip {
 	background: #f3fcf3;
-	padding: 0.8em 1em;
-	border-radius: 4px;
+	border-color: #2b9e2b;
 }
 
-blockquote:has(p:contains('[!IMPORTANT]')) {
-	border-left: 4px solid #5c2d91;
+/* IMPORTANT */
+.admonition.important {
 	background: #f8f5fc;
-	padding: 0.8em 1em;
-	border-radius: 4px;
+	border-color: #5c2d91;
 }
 
-blockquote:has(p:contains('[!WARNING]')) {
-	border-left: 4px solid #d83b01;
+/* WARNING */
+.admonition.warning {
 	background: #fff4f2;
-	padding: 0.8em 1em;
-	border-radius: 4px;
+	border-color: #d83b01;
 }
 
-blockquote:has(p:contains('[!CAUTION]')) {
-	border-left: 4px solid #e81123;
+/* CAUTION */
+.admonition.caution {
 	background: #fff5f7;
-	padding: 0.8em 1em;
-	border-radius: 4px;
+	border-color: #e81123;
 }

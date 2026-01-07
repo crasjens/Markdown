@@ -218,4 +218,28 @@ document.addEventListener('DOMContentLoaded', () => {
 			enableZoom(diagram);
 		});
 	}, 500);
+	const blocks = document.querySelectorAll('blockquote');
+	blocks.forEach((block) => {
+		const p = block.querySelector('p');
+		if (!p) return;
+
+		const text = p.innerHTML.trim();
+		const types = {
+			'[!NOTE]': 'note',
+			'[!TIP]': 'tip',
+			'[!IMPORTANT]': 'important',
+			'[!WARNING]': 'warning',
+			'[!CAUTION]': 'caution',
+		};
+
+		for (const tag in types) {
+			if (text.startsWith(tag)) {
+				const cls = types[tag];
+				block.classList.add('admonition', cls);
+
+				// Fjern tagget fra teksten
+				p.innerHTML = text.replace(tag, '').trim();
+			}
+		}
+	});
 });
