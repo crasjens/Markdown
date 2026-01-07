@@ -156,71 +156,56 @@ pre {
 
 /* Base style */
 .admonition {
-	padding: 0.5rem 1rem;
-	border-radius: 0.5rem;
-	margin: 1.2rem 0;
-	border-left: 0.5rem solid;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	padding: 1rem 1.2rem;
+	border-radius: 0.375rem;
+	margin: 1.5rem 0;
+	border-left: 0.375rem solid;
+	box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05);
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+/* Overskrift med ikon */
+.admonition::before {
+	font-weight: 600;
+	display: block;
+	margin-bottom: 0.5rem;
 	font-size: 1rem;
 }
 
-/* Farver */
+/* Farver og labels */
 .admonition.note {
 	background: #f3f9fd;
 	border-color: #0078d4;
 }
-
+.admonition.note::before {
+	content: '🛈 Note';
+}
 .admonition.tip {
 	background: #f3fcf3;
 	border-color: #2b9e2b;
 }
-
+.admonition.tip::before {
+	content: '💡 Tip';
+}
 .admonition.important {
 	background: #f8f5fc;
 	border-color: #5c2d91;
 }
-
+.admonition.important::before {
+	content: '📌 Important';
+}
 .admonition.warning {
 	background: #fff4f2;
 	border-color: #d83b01;
 }
-
+.admonition.warning::before {
+	content: '⚠️ Warning';
+}
 .admonition.caution {
 	background: #fff5f7;
 	border-color: #e81123;
 }
-
-.admonition.note::before {
-	content: 'ℹ️ Note';
-	font-weight: bold;
-	display: block;
-	margin-bottom: 0.5rem;
-}
-
-.admonition.tip::before {
-	content: '💡 Tip';
-	font-weight: bold;
-	display: block;
-	margin-bottom: 0.5rem;
-}
-
-.admonition.important::before {
-	content: '📌 Important';
-	font-weight: bold;
-	display: block;
-	margin-bottom: 0.5rem;
-}
-
-.admonition.warning::before {
-	content: '⚠️ Warning';
-	font-weight: bold;
-	display: block;
-	margin-bottom: 0.5rem;
-}
-
 .admonition.caution::before {
-	content: '🚧 Caution';
-	font-weight: bold;
-	display: block;
-	margin-bottom: 0.5rem;
+	content: '🚨 Caution';
 }
