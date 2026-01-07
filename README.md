@@ -1,12 +1,12 @@
 # Markdown Cheat Sheet
 
-Dette er en hurtig introduktion.  (under opbyning)
+Dette er en hurtig introduktion. (under opbyning)
 For den fulde, interaktive dokumentation, se GitHub Pages: (under opbyning)
 
 👉 https://crasjens.github.io/Markdown/
 
 [!NOTE]
-Dette README 
+Dette README
 
 ## Eksempler
 
@@ -22,8 +22,6 @@ graph TD
     C --> D
 ```
 
-
 ## Links
 
-[Se den fulde dokumentation](https://crasjens.github.io/Markdown/)
-
+[Se hele cheat-sheet dokumentation](https://crasjens.github.io/Markdown/)
