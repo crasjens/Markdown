@@ -88,8 +88,8 @@ _Italic_
 ### Nummererede lister
 
 1. Første
-2. Anden
-3. Tredje
+1. Anden
+1. Tredje
 
 ### Opgavelister
 
@@ -101,7 +101,7 @@ _Italic_
 ## Links
 
 [Linktekst](https://example.com)
-[Link med titel](https://example.com 'Titeltekst')
+[Link med titel](https://example.com 'Titeltekst eller tooltip')
 
 ---
 
@@ -183,8 +183,10 @@ Indhold her.
 
 ## Mentions (GitHub)
 
-@brugernavn
-#123 issue reference
+@crasjens
+#1 issue reference
+
+[@crasjens](https://github.com/crasjens)  [Issue #1](https://github.com/crasjens/Markdown/issues/1)
 
 ---
 
