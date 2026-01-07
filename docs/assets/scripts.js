@@ -239,6 +239,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				// Fjern tagget fra teksten
 				p.innerHTML = text.replace(tag, '').trim();
+
+				// Fjern skjult linjeskift efter tagget
+				p.innerHTML = p.innerHTML.replace(/^\s+/, '');
 			}
 		}
 	});
