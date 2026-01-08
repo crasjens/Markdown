@@ -35,4 +35,8 @@ graph TD
 > [!TIP]
 > Her er min [wiki](https://github.com/crasjens/APIDocumentation/wiki) Den findes i et andet repo. Jeg forsøgte ad flere omgange at kombinere custom sidebar med githubs sidebar, så jeg xx'ede de gamle sider ud og begyndte forfra i jagten på en kombi af custom- og Githubs sidebar. Og der står den så nu.
 
+Jeg forlod wiki og fandt i stedet på at bruge MKDocs til at abejde med Api-dokumentation og Markdown. Det krævede lidt python-installation og yaml-konfiguration, før strukturen var plads. Det er er nu, så her er stedet, hvor jeg fortsætte min [Markdown og api-dokumentation]()
+
+
+
 
