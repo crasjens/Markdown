@@ -6,10 +6,7 @@ Så det er en hurtig introduktion, der viser, hvad der skete under de første sk
 
 Her er min [page](https://crasjens.github.io/Markdown/)
 
-[!NOTE]
-Dette README
-
-## Eksempler
+## Små eksempler på rendering:
 
 - **Bold**
 - _Italic_
