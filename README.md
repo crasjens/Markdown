@@ -21,6 +21,12 @@ graph TD
     C --> D
 ```
 
-## Links
+## Links til andre dele af markdown-bestræbelser
 
 [Næste skridt er Issues](https://https://github.com/crasjens/Markdown/issues/1) Her lagde jeg et længere cheat sheet af markdown syntaks. Mest for at have en oversigt, men også for at bruge editoren et andet sted til et markdown kursus på [Udemy.com](https://www.udemy.com/course/markdown-guide/?couponCode=CP250105G1)
+
+Jeg blev nysgerrig på, hvad man kan bruge en wiki til. Og noget forvirret, da jeg begyndte at bruge Githbs egen auto-sidebar og custom sidebar. Så at bruge en wiki til API dokumentation er nok ikke lige det, der ligger først før. Jeg opgav ret hurtigt at bruge både custom og auto-sidebar: Måske skulle mans starte med at holde det helt enkelt og nøjes med Githubs, for den kan sådan set godt bruges, hvis man tænker lidt ove titler på siderne, så de står kronologisk. 
+
+Her er min [wiki](https://github.com/crasjens/APIDocumentation/wiki) Den findes i et andet repo.
+
+
