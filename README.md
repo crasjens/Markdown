@@ -13,6 +13,8 @@ Her er min [page](https://crasjens.github.io/Markdown/)
 - _Italic_
 - `Inline code`
 
+## Mindre diagram
+
 ```mermaid
 graph TD
     A --> B
@@ -20,6 +22,8 @@ graph TD
     B --> D
     C --> D
 ```
+
+---
 
 ## Links til andre dele af markdown-bestræbelser
 
