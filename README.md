@@ -22,4 +22,4 @@ graph TD
 
 ## Links
 
-[Næste skridt er Issues](https://https://github.com/crasjens/Markdown/issues/1) Her lagde jeg et længere cheat sheet af markdown syntaks. Mest for at have en oversigt, men også for at bruge editoren et andet sted til et markdown kursus på [UDEMY](https://www.udemy.com/course/markdown-guide/learn/lecture/43780200?start=60#overview)
+[Næste skridt er Issues](https://https://github.com/crasjens/Markdown/issues/1) Her lagde jeg et længere cheat sheet af markdown syntaks. Mest for at have en oversigt, men også for at bruge editoren et andet sted til et markdown kursus på [Udemy.com](https://www.udemy.com/course/markdown-guide/?couponCode=CP250105G1)
