@@ -27,6 +27,7 @@ graph TD
 
 Jeg blev nysgerrig på, hvad man kan bruge en wiki til. Og noget forvirret, da jeg begyndte at bruge Githubs egen auto-sidebar og custom sidebar. Så at bruge en wiki til API dokumentation er nok ikke lige det, der ligger først før. Jeg opgav ret hurtigt at bruge både custom og auto-sidebar: Måske skulle mans starte med at holde det helt enkelt og nøjes med Githubs sidebar, for den kan sådan set godt bruges, hvis man tænker lidt over navngivning af siderne, så de står kronologisk. 
 
-Her er min [wiki](https://github.com/crasjens/APIDocumentation/wiki) Den findes i et andet repo.
+> [!TIP]
+> Her er min [wiki](https://github.com/crasjens/APIDocumentation/wiki) Den findes i et andet repo.
 
 
